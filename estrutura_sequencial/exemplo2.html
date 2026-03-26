@@ -1,0 +1,16 @@
+<meta charset="utf-8">
+<script>
+    //entrada
+    let salAtual, reaj, salReaj;
+    salAtual = parseFloat(prompt(`Informe o salário atual: `));
+
+    //processamento
+    reaj = salAtual * 0.128;
+    salReaj = salAtual + reaj;
+
+    //saída
+    document.write(`**** Folha de Pagamento **** <br>`);
+    document.write(`Salário Atual: ${salAtual.toFixed(2)} <br> Reajuste: ${reaj} <br>`);
+    document.write(`Salário Reajustado: ${salReaj.toFixed(2)}`);
+
+</script>
