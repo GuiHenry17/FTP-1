@@ -1,0 +1,21 @@
+<meta charset="UTF-8">
+<script>
+
+    alert(`Exercício 3 - Lista Extra  [ Divisão da conta do restaurante ]`)
+    // entrada
+    let valorConta, percTaxaServico, qtdPessoas, valorTaxa, valorTotal, valorPessoa
+    valorConta = parseFloat(prompt(`Insira o valor total da conta:`))
+    percTaxaServico = parseFloat(prompt(`Insira o percentual da taxa de serviço (em %):`))
+    qtdPessoas = parseFloat(prompt(`Insira a quantidade de pessoas que irão pagar a conta:`))
+
+    //processamento
+    valorTaxa = valorConta * (percTaxaServico / 100)
+    valorTotal = valorConta + valorTaxa
+    valorPessoa = valorTotal / qtdPessoas
+
+    //saida
+    document.write(`O valor total da taxa de serviço é de: R$${valorTaxa.toFixed(2)} <br>`)
+    document.write(`O valor total da conta é de: R$${valorTotal.toFixed(2)} <br>`)
+    document.write(`O valor total por pessoa a pagar é de: R$${valorPessoa.toFixed(2)}`)
+
+</script>

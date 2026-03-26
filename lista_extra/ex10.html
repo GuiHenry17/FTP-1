@@ -1,0 +1,18 @@
+<meta charset="UTF-8">
+<script>
+
+    alert(`Exercício 10 - Lista Extra  [ Cálculo do valor de uma prestação atrasada ]`)
+    // entrada
+    let valorPrestacao, jurosMensal, mesesAtrasados, valorFinalPrestacao
+    valorPrestacao = parseFloat(prompt(`Insira o valor da prestação em R$:`))
+    jurosMensal = parseFloat(prompt(`Insira a taxa de juros mensal em %:`))
+    mesesAtrasados = parseFloat(prompt(`Insira a quantidade de meses atrasados:`))
+
+    //processamento
+    valorFinalPrestacao = valorPrestacao + (valorPrestacao * (jurosMensal / 100) * mesesAtrasados)
+
+
+    //saida
+    document.write(`A valor atualizado da prestação atrasada é de: R$${valorFinalPrestacao.toFixed(2)}`)
+
+</script>

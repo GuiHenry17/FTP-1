@@ -1,0 +1,19 @@
+<meta charset="UTF-8">
+<script>
+
+    alert(`Exercício 6 - Lista Extra  [ Custo de uma viagem ]`)
+    // entrada
+    let distancia, consumoMedio, precoLitroCombustivel, litrosNecessarios, custoViagem
+    distancia = parseFloat(prompt(`Insira o a distância da viagem em km:`))
+    consumoMedio = parseFloat(prompt(`Insira o consumo médio de combustível do veículo em km/l:`))
+    precoLitroCombustivel = parseFloat(prompt(`Insira o valor por unidade de combustível em litro:`))
+
+    //processamento
+    litrosNecessarios = Math.ceil(distancia / consumoMedio)
+    custoViagem = litrosNecessarios * precoLitroCombustivel
+
+    //saida
+    document.write(`O valor total de litros necessários para realizar a viagem é de: ${litrosNecessarios.toFixed(1)}L <br>`)
+    document.write(`O custo total da viagem é de: R$${custoViagem.toFixed(2)}`)
+
+</script>

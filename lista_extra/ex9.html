@@ -1,0 +1,20 @@
+<meta charset="UTF-8">
+<script>
+
+    alert(`Exercício 9 - Lista Extra  [ Total de latas de tinta ]`)
+    // entrada
+    let areaPintadaPorLitro, largura, altura, litrosNecessarios
+    areaPintadaPorLitro = 3
+    largura = parseFloat(prompt(`Insira o valor da largura em m:`))
+    altura = parseFloat(prompt(`Insira o valor da altura em m:`))
+
+    //processamento
+    area = altura * largura
+    litrosNecessarios = Math.ceil(area / areaPintadaPorLitro)
+
+
+    //saida
+    document.write(`A área da parede é de: ${area}m² <br>`)
+    document.write(`A quantidade de litros necessários para pintar a parede é de: ${litrosNecessarios}L`)
+
+</script>

@@ -1,0 +1,18 @@
+<meta charset="UTF-8">
+<script>
+
+    alert(`Exercício 1 - Lista Extra  [ Valor a pagar com desconto ]`)
+    // entrada
+    let preco, percDesc, valorDesc, valorTotal
+    preco = parseFloat(prompt(`Insira o preço do produto:`))
+    percDesc = parseFloat(prompt(`Insira o percentual de desconto do produto desejado em %:`))
+
+    //processamento
+    valorDesc = preco * (percDesc / 100)
+    valorTotal = preco - valorDesc
+
+    //saida
+    document.write(`O valor total do desconto é de: R$${valorDesc.toFixed(2)} <br>`)
+    document.write(`O valor total a pagar é de: R$${valorTotal.toFixed(2)}`)
+
+</script>

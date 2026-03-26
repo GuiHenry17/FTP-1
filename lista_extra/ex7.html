@@ -1,0 +1,18 @@
+<meta charset="UTF-8">
+<script>
+
+    alert(`Exercício 7 - Lista Extra  [ Reajuste salarial ]`)
+    // entrada
+    let salarioAtual, percReajuste, valorReajuste, salarioReajustado
+    salarioAtual = parseFloat(prompt(`Insira o salário atual em R$:`))
+    percReajuste = parseFloat(prompt(`Insira o percentual do reajuste em %:`))
+
+    //processamento
+    valorReajuste = salarioAtual * (percReajuste / 100)
+    salarioReajustado = salarioAtual + valorReajuste
+
+    //saida
+    document.write(`O valor total do reajuste é de: R$${valorReajuste.toFixed(2)} <br>`)
+    document.write(`O valor total do salário reajustado é de: R$${salarioReajustado.toFixed(2)}`)
+
+</script>

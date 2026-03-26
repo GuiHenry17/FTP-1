@@ -1,0 +1,16 @@
+<meta charset="UTF-8">
+<script>
+
+    alert(`Exercício 4 - Lista Extra  [ Cálculo do consumo de energia ]`)
+    // entrada
+    let consumoKWh, valorPorKWh, valorTotal
+    consumoKWh = parseFloat(prompt(`Insira o consumo total de kWh:`))
+    valorPorKWh = parseFloat(prompt(`Insira o preço a pagar por kWh:`))
+
+    //processamento
+    valorTotal = consumoKWh * valorPorKWh
+
+    //saida
+    document.write(`O valor total da conta de energia é de: R$${valorTotal.toFixed(2)} <br>`)
+
+</script>
