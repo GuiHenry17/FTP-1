@@ -1,0 +1,33 @@
+<meta charset="utf-8">
+<script>
+
+    alert(`Exemplo 1 - Estrutura Condicional  [Média de notas]`)
+    // entrada
+    let n1, n2, media, situacao
+    n1 = parseFloat(prompt(`Insira a primeira nota (0 a 10):`))
+    n2 = parseFloat(prompt(`Insira a segunda nota (0 a 10):`))
+
+    // processamento
+    media = (n1 + n2) / 2
+    console.log(n1, n2)
+
+    if (isNaN(n1) || isNaN(n2)) {
+        document.write(`Entrada inválida, informe valores numéricos.`)
+    } else{
+
+
+    if (media >= 6) {
+        situacao = "Aprovado."
+    }
+
+    if (media < 6) {
+        situacao = "Reprovado."
+    }
+
+    document.write(`*** Relatório de Notas *** <br>`);
+    document.write(`Nota 1: ${n1} <br> Nota 2: ${n2} <br> Média: ${media} <br>`)
+    document.write(`Situação: ${situacao}`)
+}
+
+
+</script>
