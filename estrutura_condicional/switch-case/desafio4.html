@@ -1,0 +1,22 @@
+<meta charset="utf-8">
+<script>
+
+    let dia = Number(prompt(`Insira o número do dia (1 - 7):`))
+
+    switch (dia) {
+        case 1:
+        case 7:
+            document.write(`Fim de semana.`)
+            break;
+        case 2:
+        case 3:
+        case 4:
+        case 5:
+        case 6:
+            document.write(`Dia útil.`)
+            break;
+        default:
+            document.write(`Opção inválida`)
+    }
+
+</script>

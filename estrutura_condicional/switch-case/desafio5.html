@@ -1,0 +1,20 @@
+<meta charset="utf-8">
+<script>
+
+    let media = Number(prompt(`Insira a média de notas:`))
+
+    switch (true) {
+        case media < 2:
+            document.write(`Reprovado.`)
+            break;
+        case media >= 2 && media < 6:
+            document.write(`Exame.`)
+            break;
+        case media >= 6:
+            document.write(`Aprovado.`)
+            break;
+        default:
+            document.write(`Opção inválida`)
+    }
+
+</script>
