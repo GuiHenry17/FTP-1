@@ -1,0 +1,22 @@
+<meta charset="utf-8">
+<script>
+
+    alert(`Exercicio 19 - Estrutura Condicional Aninhada [Sistema de login com senha]`)
+
+    let user, senha, resultado;
+    user = prompt(`Informe o usuário:`);
+    senha = prompt(`Informe a senha:`);
+
+    if (user === "admin") {
+        if (senha === "1234") {
+            resultado = "Login realizado com sucesso"
+        } else {
+            resultado = "Senha inválida"
+        }
+    } else {
+        resultado = "Usuário inválido"
+    }
+
+    document.write(resultado)
+
+</script>

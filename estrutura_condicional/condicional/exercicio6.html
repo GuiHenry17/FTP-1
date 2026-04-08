@@ -1,0 +1,20 @@
+<meta charset="utf-8">
+<script>
+
+    alert(`Exercício 6 - Estrutura Condicional Simples [Acesso permitido]`)
+
+    let senha, situacao
+    senha = parseFloat(prompt(`Insira a senha a ser verificada:`))
+
+    if (senha == 1234) {
+        situacao = "Acesso permitido."
+    }
+
+    if (senha != 1234) {
+        situacao = "Acesso negado."
+    }
+
+    document.write(`O número informado foi: ${senha}. <br>`)
+    document.write(`Situação: ${situacao}`)
+
+</script>

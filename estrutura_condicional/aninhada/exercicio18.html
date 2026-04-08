@@ -1,0 +1,23 @@
+<meta charset="utf-8">
+<script>
+
+    alert(`Exercicio 18 - Estrutura Condicional Aninhada [Tipo de triângulo]`)
+
+    let a, b, c, tipo;
+    a = Number(prompt(`Informe o primeiro lado:`));
+    b = Number(prompt(`Informe o segundo lado:`));
+    c = Number(prompt(`Informe o terceiro lado:`));
+
+    if (a == b && b == c) {
+        tipo = "Equilátero"
+    } else {
+        if (a == b || a == c || b == c) {
+            tipo = "Isósceles"
+        } else {
+            tipo = "Escaleno"
+        }
+    }
+
+    document.write(`Tipo de triângulo: ${tipo}`)
+
+</script>

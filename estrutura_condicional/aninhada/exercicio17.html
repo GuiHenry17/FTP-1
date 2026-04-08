@@ -1,0 +1,26 @@
+<meta charset="utf-8">
+<script>
+
+    alert(`Exercicio 17 - Estrutura Condicional Aninhada [Reajuste salarial]`)
+
+    let salario, percentual, aumento, novoSalario;
+    salario = Number(prompt(`Informe o salário:`));
+
+    if (salario <= 1500) {
+        percentual = 15
+    } else {
+        if (salario > 1500 && salario <= 3000) {
+            percentual = 10
+        } else {
+            percentual = 5
+        }
+    }
+
+    aumento = salario * (percentual / 100)
+    novoSalario = salario + aumento
+
+    document.write(`Salário antigo: R$ ${salario.toFixed(2)} <br>`)
+    document.write(`Percentual aplicado: ${percentual}% <br>`)
+    document.write(`Novo salário: R$ ${novoSalario.toFixed(2)}`)
+
+</script>

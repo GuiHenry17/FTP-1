@@ -1,0 +1,25 @@
+<meta charset="utf-8">
+<script>
+
+    alert(`Exercicio 20 - Estrutura Condicional Aninhada [Cálculo de imposto de renda]`)
+
+    let salario, imposto, liquido;
+    salario = Number(prompt(`Informe o salário:`));
+
+    if (salario <= 2000) {
+        imposto = 0
+    } else {
+        if (salario > 2000 && salario <= 3500) {
+            imposto = salario * 0.10
+        } else {
+            imposto = salario * 0.20
+        }
+    }
+
+    liquido = salario - imposto
+
+    document.write(`Salário: R$ ${salario.toFixed(2)} <br>`)
+    document.write(`Imposto: R$ ${imposto.toFixed(2)} <br>`)
+    document.write(`Salário líquido: R$ ${liquido.toFixed(2)}`)
+
+</script>

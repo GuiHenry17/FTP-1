@@ -1,0 +1,20 @@
+<meta charset="utf-8">
+<script>
+
+    alert(`Exercício 4 - Estrutura Condicional Simples [Maior de idade]`)
+
+    let idade, situacao
+    idade = parseFloat(prompt(`Insira a idade para a verificação de idade:`))
+
+    if (idade >= 18) {
+        situacao = "Maior de idade."
+    }
+
+    if (idade < 18) {
+        situacao = "Menor de idade."
+    }
+
+    document.write(`A idade informada foi: ${idade}. <br>`)
+    document.write(`Situação: ${situacao}`)
+
+</script>

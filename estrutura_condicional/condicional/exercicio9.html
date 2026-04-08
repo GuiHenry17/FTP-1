@@ -1,0 +1,21 @@
+<meta charset="utf-8">
+<script>
+
+    alert(`Exercicio 9 - Estrutura Condicional Composta [Número maior]`)
+
+    let num1, num2, resultado;
+    num1 = Number(prompt(`Informe o primeiro número:`));
+    num2 = Number(prompt(`Informe o segundo número:`));
+
+    if (num1 > num2) {
+        resultado = `O número ${num1} é maior que o número ${num2}.`
+    } else {
+        if (num1 == num2) {
+            resultado = `O número ${num2} é igual ao número ${num2}.`
+        } else {
+            resultado = `O número ${num1} é menor que o número ${num2}.`
+        }
+    }
+
+    document.write(`${resultado}`)
+</script>

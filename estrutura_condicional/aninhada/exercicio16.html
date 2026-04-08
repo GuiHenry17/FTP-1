@@ -1,0 +1,26 @@
+<meta charset="utf-8">
+<script>
+
+    alert(`Exercicio 16 - Estrutura Condicional Aninhada [Conceito de nota]`)
+
+    let nota, conceito;
+    nota = Number(prompt(`Informe a nota (0 a 10):`));
+
+    if (nota < 4) {
+        conceito = "D"
+    } else {
+        if (nota >= 4 && nota < 6) {
+            conceito = "C"
+        } else {
+            if (nota >= 6 && nota < 8) {
+                conceito = "B"
+            } else {
+                conceito = "A"
+            }
+        }
+    }
+
+    document.write(`Nota: ${nota} <br>`)
+    document.write(`Conceito: ${conceito}`)
+
+</script>

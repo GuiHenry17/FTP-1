@@ -1,0 +1,20 @@
+<meta charset="utf-8">
+<script>
+
+    alert(`Exercício 5 - Estrutura Condicional Simples [Múltiplo de 4]`)
+
+    let num, situacao
+    num = parseFloat(prompt(`Insira o número a ter a multiplicidade por 4 verificada:`))
+
+    if (num % 4 == 0) {
+        situacao = "Múltiplo de 4."
+    }
+
+    if (num % 4 != 0){
+        situacao = "Não é múltiplo de 4."
+    }
+
+    document.write(`O número informado foi: ${num}. <br>`)
+    document.write(`Situação: ${situacao}`)
+
+</script>

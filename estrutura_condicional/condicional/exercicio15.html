@@ -1,0 +1,25 @@
+<meta charset="utf-8">
+<script>
+
+    alert(`Exercicio 15 - Estrutura Condicional Aninhada [Classificação por faixa etária]`)
+
+    let idade, resultado;
+    idade = Number(prompt(`Informe a idade:`));
+
+    if (idade <= 12) {
+        resultado = "Criança"
+    } else {
+        if (idade >= 13 && idade <= 17) {
+            resultado = "Adolescente"
+        } else {
+            if (idade >= 18 && idade <= 59) {
+                resultado = "Adulto"
+            } else {
+                resultado = "Idoso"
+            }
+        }
+    }
+
+    document.write(`Classificação: ${resultado}`)
+
+</script>

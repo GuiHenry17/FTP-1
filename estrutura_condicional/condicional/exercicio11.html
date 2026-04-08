@@ -1,0 +1,18 @@
+<meta charset="utf-8">
+<script>
+
+    alert(`Exercicio 11 - Estrutura Condicional Composta [Desconto na compra]`)
+
+    let compra, desconto, valorFinal;
+    compra = parseFloat(prompt(`Informe o valor da compra:`));
+    desconto = 15 / 100
+
+    if (compra > 200) {
+        valorFinal = compra - (compra * desconto)
+    } else {
+        valorFinal = compra
+    }
+  
+
+    document.write(`O valor final da compra é de R$ ${valorFinal.toFixed(2)}.`)
+</script>
