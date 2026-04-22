@@ -1,0 +1,21 @@
+<meta charset="utf-8">
+<script>
+
+    alert(`Exercício 6 - If / Else Simples [Controle de Temperatura do Freezer]`)
+    // entrada
+    let temperatura, situacao
+    temperatura = parseFloat(prompt(`Insira a temperatura atual do freezer:`))
+
+    // processamento
+    if (temperatura > -10) {
+        situacao = `Temperatura inadequada`
+    } else {
+        situacao = `Temperatura adequada`
+    }
+
+    // saida
+    document.write(`**** Controle de Temperatura do Freezer **** <br>`)
+    document.write(`Temperatura atual do freezer: ${temperatura}°C <br>`)
+    document.write(`Situação da temperatura: ${situacao}`)
+
+</script>

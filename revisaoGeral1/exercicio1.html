@@ -1,0 +1,25 @@
+<meta charset="utf-8">
+<script>
+
+    alert(`Exercício 1 - Estrutura Sequencial [Produção de Caixas]`)
+    // entrada
+    let pecas, pecasPorCaixa, precoCaixa, caixasCompletas, pecasSobrando, valorArrecadado
+    pecas = parseFloat(prompt(`Insira a quantidade de peças produzidas:`))
+    pecasPorCaixa = parseFloat(prompt(`Insira a quantidade de peças colocadas em cada caixa:`))
+    precoCaixa = parseFloat(prompt(`Insira o preço de venda de cada caixa:`))
+
+    // processamento
+    caixasCompletas = Math.floor(pecas / pecasPorCaixa)
+    pecasSobrando = pecas % pecasPorCaixa
+    valorArrecadado = caixasCompletas * precoCaixa
+
+    // saida
+    document.write(`**** Produção de Caixas **** <br>`)
+    document.write(`Quantidade de peças produzidas: ${pecas} <br>`)
+    document.write(`Peças por caixa: ${pecasPorCaixa} <br>`)
+    document.write(`Preço de venda por caixa: R$ ${precoCaixa.toFixed(2)} <br><br>`)
+    document.write(`Quantidade de caixas completas: ${caixasCompletas} <br>`)
+    document.write(`Quantidade de peças que sobraram: ${pecasSobrando} <br>`)
+    document.write(`Valor arrecadado com as caixas completas: R$ ${valorArrecadado.toFixed(2)}`)
+
+</script>

@@ -1,0 +1,25 @@
+<meta charset="utf-8">
+<script>
+
+    alert(`Exercício 14 - Ifs Aninhados [Categoria de Campeonato]`)
+    // entrada
+    let alturaCompetidor, categoria
+    alturaCompetidor = parseFloat(prompt(`Insira a altura do competidor:`))
+
+    // processamento
+    if (alturaCompetidor < 1.50) {
+        categoria = `Categoria A`
+    } else if (alturaCompetidor < 1.70) {
+        categoria = `Categoria B`
+    } else if (alturaCompetidor < 1.90) {
+        categoria = `Categoria C`
+    } else {
+        categoria = `Categoria D`
+    }
+
+    // saida
+    document.write(`**** Categoria de Campeonato **** <br>`)
+    document.write(`Altura do competidor: ${alturaCompetidor.toFixed(2)} m <br>`)
+    document.write(`Categoria do competidor: ${categoria}`)
+
+</script>

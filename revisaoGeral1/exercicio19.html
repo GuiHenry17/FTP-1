@@ -1,0 +1,29 @@
+<meta charset="utf-8">
+<script>
+
+    alert(`Exercício 19 - Switch [Cor Primária por Letra]`)
+    // entrada
+    let letraCor, cor
+    letraCor = prompt(`Insira uma letra para a cor desejada:`).toLowerCase()
+
+    // processamento
+    switch (letraCor) {
+        case `a`:
+            cor = `Azul`
+            break
+        case `v`:
+            cor = `Vermelho`
+            break
+        case `g`:
+            cor = `Verde`
+            break
+        default:
+            cor = `Opção de cor inválida`
+    }
+
+    // saida
+    document.write(`**** Cor Primária por Letra **** <br>`)
+    document.write(`Letra informada: ${letraCor} <br>`)
+    document.write(`Resultado da cor: ${cor}`)
+
+</script>

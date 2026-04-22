@@ -1,0 +1,41 @@
+<meta charset="utf-8">
+<script>
+
+    alert(`Exercício 18 - Switch [Dia da Semana por Número]`)
+    // entrada
+    let numeroDia, diaSemana
+    numeroDia = parseFloat(prompt(`Insira um número de 1 a 7:`))
+
+    // processamento
+    switch (numeroDia) {
+        case 1:
+            diaSemana = `Domingo`
+            break
+        case 2:
+            diaSemana = `Segunda-feira`
+            break
+        case 3:
+            diaSemana = `Terça-feira`
+            break
+        case 4:
+            diaSemana = `Quarta-feira`
+            break
+        case 5:
+            diaSemana = `Quinta-feira`
+            break
+        case 6:
+            diaSemana = `Sexta-feira`
+            break
+        case 7:
+            diaSemana = `Sábado`
+            break
+        default:
+            diaSemana = `Dia inválido`
+    }
+
+    // saida
+    document.write(`**** Dia da Semana por Número **** <br>`)
+    document.write(`Número informado: ${numeroDia} <br>`)
+    document.write(`Resultado: ${diaSemana}`)
+
+</script>

@@ -1,0 +1,21 @@
+<meta charset="utf-8">
+<script>
+
+    alert(`Exercício 8 - If / Else Simples [Entrega no Prazo]`)
+    // entrada
+    let diasEntrega, situacao
+    diasEntrega = parseFloat(prompt(`Insira a quantidade de dias que a encomenda levou para chegar:`))
+
+    // processamento
+    if (diasEntrega <= 7) {
+        situacao = `Entrega no prazo`
+    } else {
+        situacao = `Entrega em atraso`
+    }
+
+    // saida
+    document.write(`**** Entrega no Prazo **** <br>`)
+    document.write(`Quantidade de dias para entrega: ${diasEntrega} <br>`)
+    document.write(`Situação da entrega: ${situacao}`)
+
+</script>

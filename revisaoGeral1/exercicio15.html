@@ -1,0 +1,25 @@
+<meta charset="utf-8">
+<script>
+
+    alert(`Exercício 15 - Ifs Aninhados [Avaliação de Bateria do Celular]`)
+    // entrada
+    let percentualBateria, classificacao
+    percentualBateria = parseFloat(prompt(`Insira o percentual de bateria do celular:`))
+
+    // processamento
+    if (percentualBateria <= 5) {
+        classificacao = `Crítica`
+    } else if (percentualBateria <= 20) {
+        classificacao = `Muito baixa`
+    } else if (percentualBateria <= 50) {
+        classificacao = `Média`
+    } else {
+        classificacao = `Boa`
+    }
+
+    // saida
+    document.write(`**** Avaliação de Bateria do Celular **** <br>`)
+    document.write(`Percentual de bateria informado: ${percentualBateria}% <br>`)
+    document.write(`Classificação da bateria: ${classificacao}`)
+
+</script>

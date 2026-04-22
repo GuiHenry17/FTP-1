@@ -1,0 +1,21 @@
+<meta charset="utf-8">
+<script>
+
+    alert(`Exercício 5 - If / Else Simples [Biblioteca Escolar]`)
+    // entrada
+    let livrosAtrasados, situacao
+    livrosAtrasados = parseFloat(prompt(`Insira a quantidade de livros devolvidos com atraso:`))
+
+    // processamento
+    if (livrosAtrasados > 0) {
+        situacao = `Aplicar advertência`
+    } else {
+        situacao = `Sem advertência`
+    }
+
+    // saida
+    document.write(`**** Biblioteca Escolar **** <br>`)
+    document.write(`Quantidade de livros devolvidos com atraso: ${livrosAtrasados} <br>`)
+    document.write(`Resultado da verificação: ${situacao}`)
+
+</script>

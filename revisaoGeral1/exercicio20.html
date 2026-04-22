@@ -1,0 +1,36 @@
+<meta charset="utf-8">
+<script>
+
+    alert(`Exercício 20 - Switch [Operação Matemática Escolhida]`)
+    // entrada
+    let num1, num2, operador, resultado
+    num1 = parseFloat(prompt(`Insira o primeiro número:`))
+    num2 = parseFloat(prompt(`Insira o segundo número:`))
+    operador = prompt(`Insira o operador desejado (+, -, *, /):`)
+
+    // processamento
+    switch (operador) {
+        case `+`:
+            resultado = num1 + num2
+            break
+        case `-`:
+            resultado = num1 - num2
+            break
+        case `*`:
+            resultado = num1 * num2
+            break
+        case `/`:
+            resultado = num1 / num2
+            break
+        default:
+            resultado = `Operação inválida`
+    }
+
+    // saida
+    document.write(`**** Operação Matemática Escolhida **** <br>`)
+    document.write(`Primeiro número: ${num1} <br>`)
+    document.write(`Segundo número: ${num2} <br>`)
+    document.write(`Operador informado: ${operador} <br>`)
+    document.write(`Resultado da operação: ${resultado}`)
+
+</script>

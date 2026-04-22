@@ -1,0 +1,21 @@
+<meta charset="utf-8">
+<script>
+
+    alert(`Exercício 7 - If / Else Simples [Verificação de Senha com Tamanho Mínimo]`)
+    // entrada
+    let senha, situacao
+    senha = prompt(`Insira a senha desejada:`)
+
+    // processamento
+    if (senha.length >= 8) {
+        situacao = `Senha aceita`
+    } else {
+        situacao = `Senha muito curta`
+    }
+
+    // saida
+    document.write(`**** Verificação de Senha **** <br>`)
+    document.write(`Quantidade de caracteres digitados: ${senha.length} <br>`)
+    document.write(`Situação da senha: ${situacao}`)
+
+</script>

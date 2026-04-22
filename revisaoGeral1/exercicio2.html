@@ -1,0 +1,25 @@
+<meta charset="utf-8">
+<script>
+
+    alert(`Exercício 2 - Estrutura Sequencial [Custo de Impressão]`)
+    // entrada
+    let paginasPB, paginasColoridas, valorPB, valorColorida, custoPB, custoColorida, custoTotal
+    paginasPB = parseFloat(prompt(`Insira a quantidade de páginas impressas em preto e branco:`))
+    paginasColoridas = parseFloat(prompt(`Insira a quantidade de páginas coloridas:`))
+    valorPB = parseFloat(prompt(`Insira o custo por página em preto e branco:`))
+    valorColorida = parseFloat(prompt(`Insira o custo por página colorida:`))
+
+    // processamento
+    custoPB = paginasPB * valorPB
+    custoColorida = paginasColoridas * valorColorida
+    custoTotal = custoPB + custoColorida
+
+    // saida
+    document.write(`**** Custo de Impressão **** <br>`)
+    document.write(`Quantidade de páginas em preto e branco: ${paginasPB} <br>`)
+    document.write(`Quantidade de páginas coloridas: ${paginasColoridas} <br><br>`)
+    document.write(`Custo das páginas em preto e branco: R$ ${custoPB.toFixed(2)} <br>`)
+    document.write(`Custo das páginas coloridas: R$ ${custoColorida.toFixed(2)} <br>`)
+    document.write(`Custo total da impressão: R$ ${custoTotal.toFixed(2)}`)
+
+</script>

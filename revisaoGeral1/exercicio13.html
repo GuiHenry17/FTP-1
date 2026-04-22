@@ -1,0 +1,25 @@
+<meta charset="utf-8">
+<script>
+
+    alert(`Exercício 13 - Ifs Aninhados [Nível de Reservatório]`)
+    // entrada
+    let percentualAgua, classificacao
+    percentualAgua = parseFloat(prompt(`Insira o percentual de água presente no reservatório:`))
+
+    // processamento
+    if (percentualAgua <= 20) {
+        classificacao = `Crítico`
+    } else if (percentualAgua <= 50) {
+        classificacao = `Baixo`
+    } else if (percentualAgua <= 80) {
+        classificacao = `Adequado`
+    } else {
+        classificacao = `Cheio`
+    }
+
+    // saida
+    document.write(`**** Nível de Reservatório **** <br>`)
+    document.write(`Percentual de água presente: ${percentualAgua}% <br>`)
+    document.write(`Classificação do reservatório: ${classificacao}`)
+
+</script>

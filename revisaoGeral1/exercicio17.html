@@ -1,0 +1,25 @@
+<meta charset="utf-8">
+<script>
+
+    alert(`Exercício 17 - Ifs Aninhados [Classificação de Distância em Corrida]`)
+    // entrada
+    let distancia, classificacao
+    distancia = parseFloat(prompt(`Insira a distância percorrida pelo participante em quilômetros:`))
+
+    // processamento
+    if (distancia <= 1) {
+        classificacao = `Iniciante`
+    } else if (distancia <= 5) {
+        classificacao = `Curta distância`
+    } else if (distancia <= 10) {
+        classificacao = `Média distância`
+    } else {
+        classificacao = `Longa distância`
+    }
+
+    // saida
+    document.write(`**** Classificação de Distância em Corrida **** <br>`)
+    document.write(`Distância percorrida: ${distancia} km <br>`)
+    document.write(`Classificação da distância: ${classificacao}`)
+
+</script>

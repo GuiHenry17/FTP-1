@@ -1,0 +1,23 @@
+<meta charset="utf-8">
+<script>
+
+    alert(`Exercício 3 - Estrutura Sequencial [Planejamento de Azulejos]`)
+    // entrada
+    let larguraParede, alturaParede, larguraAzulejo, alturaAzulejo, areaParede, areaAzulejo, quantidadeAzulejos
+    larguraParede = parseFloat(prompt(`Insira a largura da parede:`))
+    alturaParede = parseFloat(prompt(`Insira a altura da parede:`))
+    larguraAzulejo = parseFloat(prompt(`Insira a largura do azulejo:`))
+    alturaAzulejo = parseFloat(prompt(`Insira a altura do azulejo:`))
+
+    // processamento
+    areaParede = larguraParede * alturaParede
+    areaAzulejo = larguraAzulejo * alturaAzulejo
+    quantidadeAzulejos = Math.ceil(areaParede / areaAzulejo)
+
+    // saida
+    document.write(`**** Planejamento de Azulejos **** <br>`)
+    document.write(`Área da parede: ${areaParede.toFixed(2)} <br>`)
+    document.write(`Área de um azulejo: ${areaAzulejo.toFixed(2)} <br>`)
+    document.write(`Quantidade aproximada de azulejos necessária: ${quantidadeAzulejos}`)
+
+</script>
