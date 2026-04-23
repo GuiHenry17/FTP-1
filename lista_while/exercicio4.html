@@ -1,0 +1,25 @@
+<meta charset="UTF-8">
+<script>
+    let saldoInicial, saque
+
+    while (true) {
+        nota = parseFloat(prompt(`Digite a nota do ${total+1}º aluno:`))
+        if (nota == -1) break;
+        
+        total++
+        media = media + nota
+        
+
+        if (nota >= 6) aprovados++
+        else reprovados++
+        
+    }
+    media = media / total
+    percentAprov = (aprovados / total) * 100
+    document.write("******* RELATÓRIO DA TURMA *******  <br>")
+    document.write(`Total de alunos: ${total} <br>`)
+    document.write(`Aprovados: ${aprovados} <br>`)
+    document.write(`Reprovados: ${reprovados} <br>`)
+    document.write(`Média Geral: ${media.toFixed(2)} <br>`)
+    document.write(`Percentual de aprovação: ${percentAprov.toFixed(2)}%`)
+</script>
