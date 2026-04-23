@@ -1,0 +1,10 @@
+<meta charset="UTF-8">
+<script>
+    //erro classico 1: loop infinito por falta de incremento
+
+    let i = 0;
+    while (i <= 10) {
+        document.write(`linha ${i} - Oi <br>`)
+        i++; // a falta do incremento DENTRO do while gera um LOOP infinito
+    }
+</script>

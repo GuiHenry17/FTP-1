@@ -1,0 +1,11 @@
+<meta charset="UTF-8">
+<script>
+    //erro classico 2: incremento fora do laço
+
+    let i = 0;
+    while (i <= 10) {
+        document.write(`linha ${i} - Oi <br>`)
+        i++; // a posição do incremento pode variar, mas sempre deve ser dentro do laço
+    }
+    //i++; o incremento da variável de controle NÃO DEVE ficar fora do while
+</script>

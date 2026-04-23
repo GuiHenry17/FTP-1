@@ -1,0 +1,21 @@
+<meta charset="UTF-8">
+<script>
+    //erro classico 6: incrementar ou modificar a variável errada / Inserção incorreta uma variável no laço de forma
+
+    //Faça um programa que solicite 10 números inteiros para o usuário, exiba os números informados e conte a qtde de números pares e ímpares
+
+    let i = 1, num, qtPar = 0, qtImpar = 0;
+    alert(`Informe 10 números inteiros`)
+    while (i <= 10) {
+        num = parseInt(prompt(`Informe o ${i}º número inteiro:`))
+        document.write(`${num}<br>`);
+        if (num % 2 == 0) {
+            qtPar++ //equivale a qtPar = qtPar + 1
+        } else {
+            qtImpar++ //equivale a qtImpar = qtImpar + 1
+        }
+        i++;
+    }
+    document.write(`<br>Quantidade de pares: ${qtPar} <br> Quantidade de ímpares: ${qtImpar}`)
+
+</script>
