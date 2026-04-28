@@ -1,0 +1,33 @@
+<meta charset="UTF-8">
+<script>
+    let horas, dias = 0, totalHoras = 0, total = 0, extras = 0
+
+    while (true) {
+        horas = parseFloat(prompt("Digite as horas do dia (-1 para encerrar):"))
+        if (horas == -1) break;
+
+        dias++
+        totalHoras += horas
+
+        if (horas > 8) {
+            total += horas * 37.5
+            extras++
+        } else {
+            total += horas * 25
+        }
+    }
+
+    document.write("******* FOLHA SEMANAL ******* <br>")
+
+    if (dias > 0) {
+        let media = totalHoras / dias
+
+        document.write(`Dias trabalhados: ${dias} <br>`)
+        document.write(`Total de horas: ${totalHoras} <br>`)
+        document.write(`Média diária: ${media.toFixed(2)} <br>`)
+        document.write(`Total a receber: R$ ${total.toFixed(2)} <br>`)
+        document.write(`Dias com hora extra: ${extras} <br>`)
+    } else {
+        document.write("Nenhum dado.")
+    }
+</script>

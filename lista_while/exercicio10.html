@@ -1,0 +1,17 @@
+<meta charset="UTF-8">
+<script>
+    let valor = parseFloat(prompt("Valor inicial:"))
+    let taxa = parseFloat(prompt("Taxa (%):")) / 100
+    let objetivo = parseFloat(prompt("Valor desejado:"))
+    let mes = 0
+
+    while (valor < objetivo) {
+        let rendimento = valor * taxa
+        valor += rendimento
+        mes++
+
+        document.write(`Mês: ${mes} <br>`)
+        document.write(`Rendimento: ${rendimento.toFixed(2)} <br>`)
+        document.write(`Saldo: ${valor.toFixed(2)} <br><br>`)
+    }
+</script>

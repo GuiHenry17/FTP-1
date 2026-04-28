@@ -1,25 +1,33 @@
 <meta charset="UTF-8">
 <script>
-    let saldoInicial, saque
-
+    let saldo = 0, saque
+    while (saldo <= 0){
+    saldo = parseFloat(prompt(`Digite o saldo inicial:`))
+    }
+    
+    document.write("******* RELATÓRIO DE SAQUE *******  <br>")
+    document.write(`Saldo Inicial: ${saldo} <br>`)
     while (true) {
-        nota = parseFloat(prompt(`Digite a nota do ${total+1}º aluno:`))
-        if (nota == -1) break;
+        saque = parseFloat(prompt(`Digite o valor da saque a ser realizado ou 0 para parar:`))
+        if (saque == 0) break;
+
+        if (saque > saldo){
+            alert(`Saque inválido! Deve ser menor ou igual ao saldo.`)
+            saque = parseFloat(prompt(`Digite o valor da saque a ser realizado:`))
+        }
         
-        total++
-        media = media + nota
+        if (saldo > 0) {
+        saldo -= saque
+        document.write(`Operação de saque realizada! <br>
+         Valor: ${saque} <br>
+         Saldo: ${saldo} <br>`)
+        } else {
+            alert("Operação inválida! Saldo zerado, digite 0 para parar.")
+        }
         
 
-        if (nota >= 6) aprovados++
-        else reprovados++
+        
         
     }
-    media = media / total
-    percentAprov = (aprovados / total) * 100
-    document.write("******* RELATÓRIO DA TURMA *******  <br>")
-    document.write(`Total de alunos: ${total} <br>`)
-    document.write(`Aprovados: ${aprovados} <br>`)
-    document.write(`Reprovados: ${reprovados} <br>`)
-    document.write(`Média Geral: ${media.toFixed(2)} <br>`)
-    document.write(`Percentual de aprovação: ${percentAprov.toFixed(2)}%`)
+
 </script>

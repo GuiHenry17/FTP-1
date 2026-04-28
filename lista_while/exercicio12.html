@@ -1,0 +1,41 @@
+<meta charset="UTF-8">
+<script>
+    let senha, tipo, tempo
+    let total = 0, prioritarios = 0, normais = 0
+    let somaTempo = 0, maiorTempo = 0
+
+    while (true) {
+        senha = prompt("Digite a senha (fechar para encerrar):")
+        if (senha.toLowerCase() == "fechar") break;
+
+        tipo = prompt("Tipo (P/N):")
+        tempo = parseFloat(prompt("Tempo de atendimento:"))
+
+        total++
+        somaTempo += tempo
+
+        if (tempo > maiorTempo) maiorTempo = tempo
+
+        if (tipo.toUpperCase() == "P") {
+            prioritarios++
+            document.write("Atendimento prioritário <br>")
+        } else {
+            normais++
+        }
+    }
+
+    document.write("******* ATENDIMENTO ******* <br>")
+
+    if (total > 0) {
+        let media = somaTempo / total
+
+        document.write(`Total de clientes: ${total} <br>`)
+        document.write(`Prioritários: ${prioritarios} <br>`)
+        document.write(`Normais: ${normais} <br>`)
+        document.write(`Tempo total: ${somaTempo} <br>`)
+        document.write(`Tempo médio: ${media.toFixed(2)} <br>`)
+        document.write(`Maior tempo: ${maiorTempo} <br>`)
+    } else {
+        document.write("Nenhum dado.")
+    }
+</script>
