@@ -1,0 +1,16 @@
+<meta charset="UTF-8">
+<script>
+    let senha;
+    const correta = 'utfpr2026'
+    do {
+        senha = prompt(`Informe a senha:`)
+        if (senha.trim() === "") {
+            alert(`Senha não informada! Digite novamente!`)
+
+        } else if (senha !== correta) {
+            alert(`Senha incorreta! Digite novamente`)
+
+        }
+    } while (senha !== correta)
+    document.write(`Acesso concedido!`)
+</script>

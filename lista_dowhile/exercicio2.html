@@ -1,0 +1,34 @@
+<meta charset="UTF-8">
+<script>
+    let consumo, meses = 0, consumoTotal = 0, media 
+
+    do {
+        consumo = Number(prompt(`Insira o consumo do ${meses + 1}º mês (0 para sair):`))
+
+        if (consumo < 0) {
+            alert("Não é permitido informar valores menores que 0!")
+        } else if (consumo > 0) {
+            consumoTotal += consumo
+            meses++
+        }
+
+    } while (consumo !== 0);
+
+    if (meses == 0) {
+        document.write("Sem dados para cálculo de média")
+    } else {
+        media = consumoTotal / meses
+        let res
+
+        document.write("******* RELATÓRIO DE CONSUMO ******* <br>")
+        document.write(`Total consumido: ${consumoTotal} kWh <br>`)
+        document.write(`Meses registrados: ${meses} <br>`)
+        document.write(`Média de consumo: ${media.toFixed(2)} kWh <br>`)
+        if (media > 300){
+            res = 'SIM'
+        } else {
+            res = 'NÃO'
+        }
+        document.write(`Consumo elevado (>300 kWh): ${res} `)
+    }
+</script>
