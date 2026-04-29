@@ -1,0 +1,29 @@
+<meta charset="utf-8">
+<script>
+
+    alert(`Exercício 22 - Switch [Turno de Estudo por Palavra]`)
+    // entrada
+    let turno, saudacao
+    turno = prompt(`Insira o turno de estudo:`).toLowerCase()
+
+    // processamento
+    switch (turno) {
+        case `manha`:
+            saudacao = `Bom dia`
+            break
+        case `tarde`:
+            saudacao = `Boa tarde`
+            break
+        case `noite`:
+            saudacao = `Boa noite`
+            break
+        default:
+            saudacao = `Turno inválido`
+    }
+
+    // saida
+    document.write(`**** Turno de Estudo por Palavra **** <br>`)
+    document.write(`Turno informado: ${turno} <br>`)
+    document.write(`Resultado: ${saudacao}`)
+
+</script>

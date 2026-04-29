@@ -1,0 +1,32 @@
+<meta charset="utf-8">
+<script>
+
+    alert(`Exercício 21 - Switch(true) [Faixa de Nota]`)
+    // entrada
+    let nota, classificacao
+    nota = parseFloat(prompt(`Insira uma nota de 0 a 10:`))
+
+    // processamento
+    switch (true) {
+        case (nota < 0 || nota > 10):
+            classificacao = `Nota inválida`
+            break
+        case (nota < 5):
+            classificacao = `Insuficiente`
+            break
+        case (nota < 7):
+            classificacao = `Regular`
+            break
+        case (nota < 9):
+            classificacao = `Bom`
+            break
+        default:
+            classificacao = `Excelente`
+    }
+
+    // saida
+    document.write(`**** Faixa de Nota usando switch(true) **** <br>`)
+    document.write(`Nota informada: ${nota} <br>`)
+    document.write(`Classificação da nota: ${classificacao}`)
+
+</script>

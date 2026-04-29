@@ -1,0 +1,18 @@
+<meta charset="UTF-8">
+<script>
+    //erro classico 7: Condição composta mal construída
+    // validar uma nota - repetir enquanto estiver fora do intervalo [0, 10]
+    //SINTOMA: o laço nunca executa, mesmo com valores inválidos.
+
+    let i = 1, nota;
+    alert("Informe as notas no intervalo [0, 10]")
+    while( i<= 5){
+        nota = parseFloat(prompt(`Informe a ${i}º nota: `));
+        while ((nota < 0) || (nota > 10)){
+            alert("Nota inválda. Digite novamente.")
+            nota = parseFloat(prompt(`Informe a ${i}º nota: `));
+        }
+        document.write(`Nota ${i}: ${nota}<br>`)
+        i++
+    }
+</script>

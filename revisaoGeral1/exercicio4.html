@@ -1,0 +1,21 @@
+<meta charset="utf-8">
+<script>
+
+    alert(`Exercício 4 - If / Else Simples [Meta Diária de Passos]`)
+    // entrada
+    let quantidadePassos, situacao
+    quantidadePassos = parseFloat(prompt(`Insira a quantidade de passos dados no dia:`))
+
+    // processamento
+    if (quantidadePassos >= 8000) {
+        situacao = `Meta atingida`
+    } else {
+        situacao = `Meta não atingida`
+    }
+
+    // saida
+    document.write(`**** Meta Diária de Passos **** <br>`)
+    document.write(`Quantidade de passos dados: ${quantidadePassos} <br>`)
+    document.write(`Situação da meta: ${situacao}`)
+
+</script>

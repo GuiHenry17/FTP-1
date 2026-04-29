@@ -1,0 +1,19 @@
+<meta charset="UTF-8">
+<script>
+    let numeroSecreto = 42
+    let chute, tentativas = 0
+
+    while (true) {
+        chute = parseInt(prompt("Digite seu palpite:"))
+        tentativas++
+
+        if (chute > numeroSecreto) {
+            alert("Muito alto!")
+        } else if (chute < numeroSecreto) {
+            alert("Muito baixo!")
+        } else {
+            document.write(`Acertou em ${tentativas} tentativas!`)
+            break;
+        }
+    }
+</script>

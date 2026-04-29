@@ -1,0 +1,25 @@
+<meta charset="utf-8">
+<script>
+
+    alert(`Exercício 11 - Ifs Aninhados [Classificação de Temperatura Ambiente]`)
+    // entrada
+    let temperatura, classificacao
+    temperatura = parseFloat(prompt(`Insira a temperatura do ambiente:`))
+
+    // processamento
+    if (temperatura < 10) {
+        classificacao = `Muito frio`
+    } else if (temperatura < 20) {
+        classificacao = `Frio`
+    } else if (temperatura < 30) {
+        classificacao = `Agradável`
+    } else {
+        classificacao = `Quente`
+    }
+
+    // saida
+    document.write(`**** Classificação de Temperatura Ambiente **** <br>`)
+    document.write(`Temperatura informada: ${temperatura}°C <br>`)
+    document.write(`Classificação da temperatura: ${classificacao}`)
+
+</script>

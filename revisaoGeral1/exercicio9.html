@@ -1,0 +1,21 @@
+<meta charset="utf-8">
+<script>
+
+    alert(`Exercício 9 - If / Else Simples [Capacidade do Elevador]`)
+    // entrada
+    let pesoTotal, situacao
+    pesoTotal = parseFloat(prompt(`Insira o peso total das pessoas no elevador:`))
+
+    // processamento
+    if (pesoTotal > 600) {
+        situacao = `Capacidade excedida`
+    } else {
+        situacao = `Capacidade permitida`
+    }
+
+    // saida
+    document.write(`**** Capacidade do Elevador **** <br>`)
+    document.write(`Peso total informado: ${pesoTotal} kg <br>`)
+    document.write(`Resultado da verificação: ${situacao}`)
+
+</script>

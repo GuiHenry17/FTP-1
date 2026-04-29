@@ -1,0 +1,25 @@
+<meta charset="utf-8">
+<script>
+
+    alert(`Exercício 16 - Ifs Aninhados [Faixa de Consumo de Internet]`)
+    // entrada
+    let consumoGB, classificacao
+    consumoGB = parseFloat(prompt(`Insira a quantidade de GB consumidos no mês:`))
+
+    // processamento
+    if (consumoGB <= 50) {
+        classificacao = `Uso leve`
+    } else if (consumoGB <= 150) {
+        classificacao = `Uso moderado`
+    } else if (consumoGB <= 300) {
+        classificacao = `Uso intenso`
+    } else {
+        classificacao = `Uso muito intenso`
+    }
+
+    // saida
+    document.write(`**** Faixa de Consumo de Internet **** <br>`)
+    document.write(`Quantidade de GB consumidos no mês: ${consumoGB} GB <br>`)
+    document.write(`Classificação do consumo: ${classificacao}`)
+
+</script>

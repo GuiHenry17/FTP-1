@@ -1,0 +1,24 @@
+<meta charset="UTF-8">
+<script>
+    let celsius, total = 0
+
+    while (true) {
+        celsius = parseFloat(prompt("Digite a temperatura em Celsius (999 para encerrar):"))
+        if (celsius == 999) break;
+
+        let f = (celsius * 9/5) + 32
+        let classificacao
+
+        if (celsius < 15) classificacao = "Frio"
+        else if (celsius <= 25) classificacao = "Agradável"
+        else classificacao = "Quente"
+
+        document.write(`Celsius: ${celsius} <br>`)
+        document.write(`Fahrenheit: ${f.toFixed(2)} <br>`)
+        document.write(`Classificação: ${classificacao} <br><br>`)
+
+        total++
+    }
+
+    document.write(`Total de conversões: ${total}`)
+</script>

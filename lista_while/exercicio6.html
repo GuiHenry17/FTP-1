@@ -1,0 +1,34 @@
+<meta charset="UTF-8">
+<script>
+    let salario, total = 0, contador = 0, maior, menor
+
+    while (true) {
+        salario = parseFloat(prompt("Digite o salário (0 para encerrar):"))
+        if (salario == 0) break;
+
+        if (contador == 0) {
+            maior = salario
+            menor = salario
+        }
+
+        total += salario
+        contador++
+
+        if (salario > maior) maior = salario
+        if (salario < menor) menor = salario
+    }
+
+    document.write("******* FOLHA DE PAGAMENTO ******* <br>")
+
+    if (contador > 0) {
+        let media = total / contador
+
+        document.write(`Total da Folha: R$ ${total.toFixed(2)} <br>`)
+        document.write(`Qtde de Funcionários: ${contador} <br>`)
+        document.write(`Média Salarial: R$ ${media.toFixed(2)} <br>`)
+        document.write(`Maior salário: R$ ${maior.toFixed(2)} <br>`)
+        document.write(`Menor salário: R$ ${menor.toFixed(2)} <br>`)
+    } else {
+        document.write("Nenhum dado para calcular.")
+    }
+</script>

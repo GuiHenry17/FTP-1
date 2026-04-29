@@ -1,0 +1,25 @@
+<meta charset="utf-8">
+<script>
+
+    alert(`Exercício 12 - Ifs Aninhados [Desempenho de Atleta]`)
+    // entrada
+    let tempoProva, classificacao
+    tempoProva = parseFloat(prompt(`Insira o tempo, em segundos, que o atleta levou para completar a prova:`))
+
+    // processamento
+    if (tempoProva <= 50) {
+        classificacao = `Excelente`
+    } else if (tempoProva <= 70) {
+        classificacao = `Bom`
+    } else if (tempoProva <= 90) {
+        classificacao = `Regular`
+    } else {
+        classificacao = `Baixo desempenho`
+    }
+
+    // saida
+    document.write(`**** Desempenho de Atleta **** <br>`)
+    document.write(`Tempo da prova: ${tempoProva} segundos <br>`)
+    document.write(`Classificação do atleta: ${classificacao}`)
+
+</script>

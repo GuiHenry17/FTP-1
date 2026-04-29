@@ -1,0 +1,22 @@
+<meta charset="UTF-8">
+<script>
+    let tentativa = 0, senha
+
+    while (tentativa < 3) {
+        senha = prompt("Informe a senha:")
+
+        if (senha === "utfpr2025") {
+            document.write("Acesso liberado!")
+            break
+        } else {
+            tentativa++
+            let restantes = 3 - tentativa
+
+            if (restantes > 0) {
+                document.write(`Senha incorreta. Tentativas restantes: ${restantes} <br>`)
+            } else {
+                document.write("Conta bloqueada após 3 tentativas.")
+            }
+        }
+    }
+</script>

@@ -1,0 +1,30 @@
+<meta charset="UTF-8">
+<script>
+    let nome, quantidade, totalItens = 0, produtos = 0
+
+    while (true) {
+        nome = prompt("Digite o nome do produto (fim para encerrar):")
+        if (nome.toLowerCase() == "fim") break;
+
+        quantidade = parseInt(prompt("Digite a quantidade:"))
+
+        if (quantidade < 5) {
+            document.write(`${nome}: Repor urgente! <br>`)
+        }
+
+        totalItens += quantidade
+        produtos++
+    }
+
+    document.write("******* ESTOQUE ******* <br>")
+
+    if (produtos > 0) {
+        let media = totalItens / produtos
+
+        document.write(`Produtos cadastrados: ${produtos} <br>`)
+        document.write(`Total de itens: ${totalItens} <br>`)
+        document.write(`Média por produto: ${media.toFixed(2)} <br>`)
+    } else {
+        document.write("Nenhum dado.")
+    }
+</script>

@@ -1,0 +1,32 @@
+<meta charset="UTF-8">
+<script>
+    let acumulador = 0, contador = 0, venda
+
+    while (true) {
+        venda = parseFloat(prompt(`Digite o valor da ${contador + 1}º venda (0 para encerrar):`))
+
+        if (venda === 0) {
+            break;
+        }
+
+        acumulador += venda
+        contador++
+    }
+
+    document.write("******* RELATÓRIO DO DIA ******* <br>")
+    document.write(`Total arrecadado: R$ ${acumulador.toFixed(2)} <br>`)
+    document.write(`Quantidade de vendas: ${contador} <br>`)
+
+    if (contador > 0) {
+        let media = acumulador / contador
+        document.write(`Média por venda: R$ ${media.toFixed(2)} <br>`)
+    } else {
+        document.write("Nenhum dado para calcular média <br>")
+    }
+
+    if (acumulador >= 500) {
+        document.write("Meta atingida (R$500): SIM")
+    } else {
+        document.write("Meta atingida (R$500): NÃO")
+    }
+</script>
