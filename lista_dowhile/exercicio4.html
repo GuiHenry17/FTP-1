@@ -1,0 +1,34 @@
+<meta charset="UTF-8">
+<script>
+    let saldo, deposito, total = 0, qtd = 0
+
+    do {
+        saldo = parseFloat(prompt("Digite o saldo inicial:"))
+    } while (saldo <= 0)
+
+    let saldoInicial = saldo
+
+    do {
+        deposito = parseFloat(prompt("Digite o valor do depósito (0 para encerrar):"))
+
+        if (deposito == 0) break;
+
+        if (deposito <= 0) {
+            alert("Valor inválido!")
+        } else {
+            saldo += deposito
+            total += deposito
+            qtd++
+
+            document.write(`Depósito realizado: ${deposito} <br>`)
+            document.write(`Saldo atual: ${saldo} <br><br>`)
+        }
+
+    } while (true)
+
+    document.write("******* CONTA BANCÁRIA ******* <br>")
+    document.write(`Saldo inicial: R$ ${saldoInicial.toFixed(2)} <br>`)
+    document.write(`Total depositado: R$ ${total.toFixed(2)} <br>`)
+    document.write(`Saldo final: R$ ${saldo.toFixed(2)} <br>`)
+    document.write(`Quantidade de depósitos: ${qtd}`)
+</script>

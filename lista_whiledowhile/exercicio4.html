@@ -1,0 +1,16 @@
+<meta charset="UTF-8">
+<script>
+// Estrutura escolhida: do...while
+// Justificativa: deve tentar pelo menos uma vez
+
+let senha, tentativas = 0
+
+do {
+    senha = parseInt(prompt("Digite a senha:"))
+    tentativas++
+} while (senha != 1234)
+
+document.write("******* ACESSO ******* <br>")
+document.write("Acesso liberado! <br>")
+document.write(`Tentativas: ${tentativas}`)
+</script>

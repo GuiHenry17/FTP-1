@@ -1,0 +1,14 @@
+<meta charset="UTF-8">
+<script>
+// Estrutura escolhida: while
+// Justificativa: precisa validar antes de aceitar o valor
+
+let valor = 0
+
+while (valor <= 0) {
+    valor = parseFloat(prompt("Digite um número maior que 0:"))
+}
+
+document.write("******* VALIDAÇÃO ******* <br>")
+document.write(`Valor válido informado: ${valor}`)
+</script>

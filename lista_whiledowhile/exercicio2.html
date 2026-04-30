@@ -1,0 +1,25 @@
+<meta charset="UTF-8">
+<script>
+// Estrutura escolhida: while
+// Justificativa: pode não haver nenhuma venda
+
+let venda = 1, total = 0, qtd = 0
+
+while (venda != 0) {
+    venda = parseFloat(prompt("Digite o valor da venda (0 para encerrar):"))
+
+    if (venda > 0) {
+        total += venda
+        qtd++
+    }
+}
+
+document.write("******* RELATÓRIO DE VENDAS ******* <br>")
+
+if (qtd > 0) {
+    document.write(`Total vendido: R$ ${total.toFixed(2)} <br>`)
+    document.write(`Quantidade de vendas: ${qtd}`)
+} else {
+    document.write("Sem dados para cálculo")
+}
+</script>

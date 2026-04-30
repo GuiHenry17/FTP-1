@@ -1,34 +1,17 @@
 <meta charset="UTF-8">
 <script>
-    let consumo, meses = 0, consumoTotal = 0, media 
+    let codigo, tentativas = 0
 
     do {
-        consumo = Number(prompt(`Insira o consumo do ${meses + 1}º mês (0 para sair):`))
+        codigo = parseInt(prompt("Digite o código de acesso:"))
+        tentativas++
 
-        if (consumo < 0) {
-            alert("Não é permitido informar valores menores que 0!")
-        } else if (consumo > 0) {
-            consumoTotal += consumo
-            meses++
+        if (codigo != 1234) {
+            alert("Código incorreto!")
         }
 
-    } while (consumo !== 0);
+    } while (codigo != 1234)
 
-    if (meses == 0) {
-        document.write("Sem dados para cálculo de média")
-    } else {
-        media = consumoTotal / meses
-        let res
-
-        document.write("******* RELATÓRIO DE CONSUMO ******* <br>")
-        document.write(`Total consumido: ${consumoTotal} kWh <br>`)
-        document.write(`Meses registrados: ${meses} <br>`)
-        document.write(`Média de consumo: ${media.toFixed(2)} kWh <br>`)
-        if (media > 300){
-            res = 'SIM'
-        } else {
-            res = 'NÃO'
-        }
-        document.write(`Consumo elevado (>300 kWh): ${res} `)
-    }
+    document.write("Acesso liberado! <br>")
+    document.write(`Tentativas realizadas: ${tentativas}`)
 </script>

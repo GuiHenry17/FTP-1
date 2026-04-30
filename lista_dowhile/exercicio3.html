@@ -1,0 +1,27 @@
+<meta charset="UTF-8">
+<script>
+    let idade, total = 0, menores = 0, adultos = 0, idosos = 0
+
+    do {
+        idade = parseInt(prompt(`Digite a idade da ${total + 1}º pessoa: (-1 para encerrar):`))
+
+        if (idade == -1) break;
+
+        if (idade < 0) {
+            alert("Idade inválida!")
+        } else {
+            total++
+
+            if (idade < 18) menores++
+            else if (idade <= 59) adultos++
+            else idosos++
+        }
+
+    } while (true)
+
+    document.write("******* RELATÓRIO DE IDADES ******* <br>")
+    document.write(`Total de pessoas: ${total} <br>`)
+    document.write(`Menores de idade: ${menores} <br>`)
+    document.write(`Adultos: ${adultos} <br>`)
+    document.write(`Idosos: ${idosos}`)
+</script>

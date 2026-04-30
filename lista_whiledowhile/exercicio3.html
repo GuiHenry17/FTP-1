@@ -1,0 +1,24 @@
+<meta charset="UTF-8">
+<script>
+// Estrutura escolhida: do...while
+// Justificativa: menu precisa aparecer pelo menos uma vez
+
+let op, n1, n2
+
+do {
+    op = parseInt(prompt("1 - Somar\n2 - Subtrair\n3 - Sair"))
+
+    if (op == 1 || op == 2) {
+        n1 = parseFloat(prompt("Digite o primeiro número:"))
+        n2 = parseFloat(prompt("Digite o segundo número:"))
+
+        let res = (op == 1) ? n1 + n2 : n1 - n2
+
+        document.write("******* RESULTADO ******* <br>")
+        document.write(`Resultado: ${res} <br><br>`)
+    } else if (op != 3) {
+        alert("Opção inválida")
+    }
+
+} while (op != 3)
+</script>
