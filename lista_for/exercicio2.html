@@ -1,0 +1,22 @@
+<meta charset="UTF-8">
+<script>
+
+    let num, pos = 0, neg = 0, zeros = 0
+    for (let i = 1; i <= 10; i++){
+        num = Number(prompt(`Insira o ${i}º número:`))
+
+        if (num == 0) zeros++
+        else if (num > 0) pos ++
+        else neg ++
+    }
+
+    document.write(`******** RELATÓRIO ********  <br>`)
+    document.write(`Positivos: ${pos} <br>`)
+    document.write(`Negativos: ${neg} <br>`)
+    document.write(`Zeros: ${zeros} <br>`)
+
+
+
+    
+
+</script>
