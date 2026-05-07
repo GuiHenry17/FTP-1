@@ -1,0 +1,43 @@
+<meta charset="UTF-8">
+<script>
+
+    let nota, aprov = 0, reprov = 0, menor = 0, maior = 0, soma = 0
+    document.write(`******** RELATÓRIO ********  <br>`)
+    document.write(`Relação de notas:  <br>`)
+    for (let i = 1; i <= 10; i++) {
+        nota = Number(prompt(`Insira a ${i}º nota [0-10]:`))
+
+        while (nota < 0 || nota > 10) {
+            alert(`Nota inválida! O invervalo é de [0-10]`)
+            nota = Number(prompt(`Insira a ${i}º nota [0-10]:`))
+        }
+
+
+        if (i == 1) {
+            maior = nota
+            menor = nota
+        } else {
+            if (nota < menor) menor = nota
+            if (nota > maior) maior = nota
+        }
+
+
+        if (nota >= 6) aprov++
+        else reprov++
+
+        soma += nota
+
+        document.write(`${nota} `)
+    }
+
+    document.write(`<br> Media: ${(soma / 10).toFixed(2)} <br>`)
+    document.write(`Maior: ${maior} <br>`)
+    document.write(`Menor: ${menor} <br>`)
+    document.write(`Aprovados: ${aprov} <br>`)
+    document.write(`Reprovados: ${reprov} <br>`)
+
+
+
+
+
+</script>

@@ -1,20 +1,21 @@
 <meta charset="UTF-8">
 <script>
 
-    let base, expoente, resultado = 1, abc
-    base = parseFloat(prompt(`Insira a base:`))
-    expoente = parseInt(prompt(`Insira o expoente:`))
-    for (let i = 1; i <= expoente; i++){
-        resultado = resultado * base
+    let num, quant = 0
+    num = Number(prompt(`Insira o número a ter seus divisores calculados:`))
+
+    document.write(`******** RESULTADO ********   <br>`)
+    document.write(`Número informado: ${num} <br><br>`)
+
+    for (let i = 0; i <= num; i++) {
+        if (num % i == 0) {
+            quant++
+            document.write(`Divisor encontrado: ${i} <br>`)
+        }
     }
 
-    document.write(`******** POTÊNCIA ******** <br>`)
-    document.write(`Base informada: ${base} <br>`)
-    document.write(`Expoente: ${expoente} <br>`)
-    document.write(`Resultado: ${resultado} <br>`)
+    document.write(`<br> Quantidade de divisores encontrados para o número informado: ${quant}`)
 
 
-
-    
 
 </script>
