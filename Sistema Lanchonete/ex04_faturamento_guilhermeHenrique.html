@@ -1,14 +1,37 @@
 <meta charset="utf-8">
 <script>
-    let turno, valorVenda
+    let turno, valorVenda, numeroVendas = 0, valorTotal = 0, maiorVenda = 0
     turno = prompt(`Insira o nome do turno:`)
     while (valorVenda !== 0) {
         valorVenda = Number(prompt(`Insira o valor de uma venda: (0 para encerrar)`))
-        if (valorVenda < 0){
+        
+        while (valorVenda < 0) {
             alert("O valor de uma venda não pode ser negativo!")
             valorVenda = Number(prompt(`Insira o valor de uma venda: (0 para encerrar)`))
         }
-        
+
+        if (valorVenda !== 0) {
+            numeroVendas++
+            valorTotal += valorVenda
+        }
+
+        if (valorVenda > maiorVenda) {
+            maiorVenda = valorVenda
+        }
+    }
+
+    if (numeroVendas > 0) {
+        let media = valorTotal / numeroVendas
+        document.write(`****** FATURAMENTO DO TURNO ******* <br>`)
+        document.write(`Turno: ${turno} <br>`)
+        document.write(`Total de vendas: ${numeroVendas} <br>`)
+        document.write(`Valor total: R$ ${valorTotal} <br>`)
+        document.write(`Maior venda: R$ ${maiorVenda} <br>`)
+        if (media) {
+            document.write(`Média/venda: R$ ${media} <br>`)
+        }
+    } else {
+        document.write(`Nenhuma venda registrada no turno.`)
     }
 
 </script>

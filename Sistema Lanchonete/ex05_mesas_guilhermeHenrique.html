@@ -1,0 +1,35 @@
+<meta charset="utf-8">
+<script>
+    let numeroMesas = 0, totalPessoas = 0, mediaMesa, mesaMaiorPessoas = 0, nMesa = 1, numeroPessoas
+    while (numeroPessoas !== 0) { 
+        numeroPessoas = Number(prompt(`Insira o números de pessoas da ${nMesa}º mesa (0 para encerrar):`))
+        
+        while (numeroPessoas < 0) {
+            alert("O número de pessoas não pode ser negativo!")
+            numeroPessoas = Number(prompt(`Insira o números de pessoas da ${nMesa}º mesa (0 para encerrar):`))
+        }
+
+
+        if (numeroPessoas !== 0) {
+            nMesa++
+            numeroMesas++
+            totalPessoas += numeroPessoas
+        }
+
+        if (numeroPessoas > mesaMaiorPessoas) {
+            mesaMaiorPessoas = numeroPessoas
+        }
+    }
+
+    if (numeroMesas > 0) {
+        mediaMesa = totalPessoas / numeroMesas
+        document.write(`******* CONTROLE DE MESAS *******  <br>`)
+        document.write(`Mesas abertas: ${numeroMesas} <br>`)
+        document.write(`Total de pessoas: ${totalPessoas}  <br>`)
+        document.write(`Média por mesa: ${mediaMesa} pessoas  <br>`)
+        document.write(`Mesa com a maior quantidade de pessoas: ${mesaMaiorPessoas} pessoas  <br>`)
+    } else {
+        document.write(`Nenhuma mesa registrada.`)
+    }
+
+</script>
