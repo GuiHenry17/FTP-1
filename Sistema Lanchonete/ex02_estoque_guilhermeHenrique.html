@@ -1,0 +1,32 @@
+<meta charset="utf-8">
+<script>
+    let numeroProdutos, produtoNome, produtoEstoque, produtosEmReposicao = 0
+    do {
+        numeroProdutos = Number(prompt("Informe o número de produtos no estoque:"))
+        if (numeroProdutos <= 0 || isNaN(numeroProdutos)) {
+            alert("O número de produtos no estoque deve ser maior do que 0!")
+        }
+    }
+    while (numeroProdutos <= 0 || isNaN(numeroProdutos));
+
+
+    document.write(`******* RELATÓRIO DE ESTOQUE ******* <br>`)
+    for (i = 1; i <= numeroProdutos; i++) {
+        produtoNome = prompt(`Informe o nome do ${i}º produto:`)
+        do {
+            produtoEstoque = Number(prompt(`Informe o estoque do ${i}º produto:`))
+            if (produtoEstoque < 0) {
+                alert("O estoque de um produto não pode ser negativo!")
+            }
+        } while (produtoEstoque < 0)
+        if (produtoEstoque < 10) {
+            document.write(` <hr> ${produtoNome} - Estoque: ${produtoEstoque} un. <hr>`)
+            produtosEmReposicao++
+        }
+    }
+
+    document.write(`Produtos verificados: ${numeroProdutos} <br>`)
+    document.write(`Precisam de reposição: ${produtosEmReposicao}`)
+
+
+</script>

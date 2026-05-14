@@ -1,0 +1,32 @@
+<meta charset="utf-8">
+<script>
+    let numeroMesas, totalFaturado = 0, totalGorjetas = 0, gorjetaMesa, contaMesa, mediaGorjetas
+    do {
+        numeroMesas = Number(prompt("Informe o número de mesas atendidas:"))
+        if (numeroMesas <= 0 || isNaN(numeroMesas)) {
+            alert("O número de mesas atendidas deve ser maior do que 0!")
+        }
+    }
+    while (numeroMesas <= 0 || isNaN(numeroMesas));
+
+    for (let i = 1; i <= numeroMesas; i++) {
+        do {
+            contaMesa = Number(prompt(`Informe o valor total da conta para a ${i}º mesa:`))
+            if (contaMesa < 0) {
+                alert("O valor total da conta não pode ser negativo!")
+            }
+        } while (contaMesa < 0)
+        gorjetaMesa = (contaMesa * 0.1)
+        totalGorjetas += gorjetaMesa
+        totalFaturado += contaMesa + gorjetaMesa
+    }
+    mediaGorjetas = totalGorjetas / numeroMesas
+
+    document.write(`******* GORJETAS DO TURNO ******* <br>`)
+    document.write(`Mesas atendidas: ${numeroMesas} <br>`)
+    document.write(`Total faturado: R$ ${totalFaturado.toFixed(2)} <br>`)
+    document.write(`Total de gorjetas: R$ ${totalGorjetas.toFixed(2)} <br>`)
+    document.write(`Média de gorjeta/mesa: R$ ${(mediaGorjetas).toFixed(2)}`)
+
+
+</script>

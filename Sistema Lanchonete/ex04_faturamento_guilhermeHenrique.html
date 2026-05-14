@@ -1,0 +1,14 @@
+<meta charset="utf-8">
+<script>
+    let turno, valorVenda
+    turno = prompt(`Insira o nome do turno:`)
+    while (valorVenda !== 0) {
+        valorVenda = Number(prompt(`Insira o valor de uma venda: (0 para encerrar)`))
+        if (valorVenda < 0){
+            alert("O valor de uma venda não pode ser negativo!")
+            valorVenda = Number(prompt(`Insira o valor de uma venda: (0 para encerrar)`))
+        }
+        
+    }
+
+</script>

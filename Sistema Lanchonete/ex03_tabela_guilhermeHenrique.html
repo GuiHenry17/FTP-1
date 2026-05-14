@@ -1,0 +1,32 @@
+<meta charset="utf-8">
+<script>
+    let  produtoNome, produtoPrecoUnitario, quantidadeMaxUnidades
+
+    do {
+        quantidadeMaxUnidades = Number(prompt("Informe a quantidade de unidades a ser exibida na tabela:"))
+        if (quantidadeMaxUnidades < 1 || quantidadeMaxUnidades > 20 || isNaN(quantidadeMaxUnidades)) {
+            alert("A quantidade de produtos a ser exibida deve estar entre 1 e 20!")
+        }
+    }
+    while (quantidadeMaxUnidades < 1 || quantidadeMaxUnidades > 20 || isNaN(quantidadeMaxUnidades));
+
+    produtoNome = prompt(`Insira o nome do produto:`)
+
+    do {
+        produtoPrecoUnitario = Number(prompt(`Informe o preço unitário do produto "${produtoNome}"":`))
+        if (produtoPrecoUnitario <= 0) {
+            alert("O estoque de um produto deve ser maior que 0!")
+        }
+    } while (produtoPrecoUnitario <= 0)
+    document.write(`******* TABELA DE PREÇOS: ${produtoNome.toUpperCase()} ******* <hr>`)
+
+
+   for (let i = 1; i <= quantidadeMaxUnidades; i++) {
+        document.write(`Qtd. ${i}: R$ ${(produtoPrecoUnitario * i).toFixed(2)} <hr>`)
+   }
+
+
+    
+
+
+</script>
