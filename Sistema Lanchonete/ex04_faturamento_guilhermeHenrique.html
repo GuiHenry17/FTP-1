@@ -4,7 +4,7 @@
     turno = prompt(`Insira o nome do turno:`)
     while (valorVenda !== 0) {
         valorVenda = Number(prompt(`Insira o valor de uma venda: (0 para encerrar)`))
-        
+
         while (valorVenda < 0) {
             alert("O valor de uma venda não pode ser negativo!")
             valorVenda = Number(prompt(`Insira o valor de uma venda: (0 para encerrar)`))
@@ -28,7 +28,7 @@
         document.write(`Valor total: R$ ${valorTotal} <br>`)
         document.write(`Maior venda: R$ ${maiorVenda} <br>`)
         if (media) {
-            document.write(`Média/venda: R$ ${media} <br>`)
+            document.write(`Média/venda: R$ ${media.toFixed(2)} <br>`)
         }
     } else {
         document.write(`Nenhuma venda registrada no turno.`)

@@ -1,0 +1,26 @@
+<meta charset="utf-8">
+<script>
+    let temperatura, tempDentroFaixa = 0, tempForaFaixa = 0, nTemperatura = 1
+    do {
+        temperatura = Number(prompt(`Insira o valor da ${nTemperatura}º temperatura do registro: (999 para encerrar)`))
+        if (temperatura >= -5 && temperatura <= 5) {
+            tempDentroFaixa++
+            nTemperatura++
+        } else if (temperatura != 999) {
+            tempForaFaixa++
+            nTemperatura++
+        }
+    } while (temperatura != 999)
+    let totalTemperaturas = tempDentroFaixa + tempForaFaixa
+
+    if (totalTemperaturas > 0) {
+        document.write(` ******* MONITORAMENTO DO FRIGORÍFICO ******* <br>`)
+        document.write(`Total de leituras: ${totalTemperaturas} <br>`)
+        document.write(`Dentro da faixa (-5°C a 5°C): ${tempDentroFaixa} <br>`)
+        document.write(`Fora da faixa: ${tempForaFaixa} <br>`)
+    } else {
+        document.write(`Sem dados de temperatura.`)
+    }
+
+
+</script>

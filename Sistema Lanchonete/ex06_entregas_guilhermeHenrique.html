@@ -1,0 +1,35 @@
+<meta charset="utf-8">
+<script>
+    let tempoEntrega, totalEntregas = 0, entregasNoPrazo = 0, entregasAtrasadas = 0, mediaEntregas, nEntrega = 1, tempoTotal = 0
+    while (tempoEntrega !== -1) {
+        tempoEntrega = Number(prompt(`Insira o tempo para realizar a ${nEntrega}º entrega (-1 para encerrar):`))
+
+        while (tempoEntrega <= 0 && tempoEntrega !== -1) {
+            alert("O tempo de uma entrega deve ser maior que 0!")
+            tempoEntrega = Number(prompt(`Insira o tempo para realizar a ${nEntrega}º entrega (-1 para encerrar):`))
+        }
+
+
+        if (tempoEntrega !== -1) {
+            nEntrega++
+            totalEntregas++
+            tempoTotal += tempoEntrega
+        }
+
+        if (tempoEntrega > 30) {
+            entregasAtrasadas++
+        } else if (tempoEntrega > 0) entregasNoPrazo++
+    }
+
+    if (totalEntregas > 0) {
+        mediaEntregas = tempoTotal / totalEntregas
+        document.write(`******* RELATÓRIO DE ENTREGAS *******   <br>`)
+        document.write(`Total de entregas: ${totalEntregas} <br>`)
+        document.write(`No prazo (≤ 30 min): ${entregasNoPrazo}  <br>`)
+        document.write(`Atrasadas (> 30 min): ${entregasAtrasadas}  <br>`)
+        document.write(`Tempo médio: ${mediaEntregas.toFixed(2)} min  <br>`)
+    } else {
+        document.write(`Nenhuma entrega registrada.`)
+    }
+
+</script>

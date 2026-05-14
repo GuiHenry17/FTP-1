@@ -1,6 +1,6 @@
 <meta charset="utf-8">
 <script>
-    let  produtoNome, produtoPrecoUnitario, quantidadeMaxUnidades
+    let produtoNome, produtoPrecoUnitario, quantidadeMaxUnidades
 
     do {
         quantidadeMaxUnidades = Number(prompt("Informe a quantidade de unidades a ser exibida na tabela:"))
@@ -21,12 +21,12 @@
     document.write(`******* TABELA DE PREÇOS: ${produtoNome.toUpperCase()} ******* <hr>`)
 
 
-   for (let i = 1; i <= quantidadeMaxUnidades; i++) {
+    for (let i = 1; i <= quantidadeMaxUnidades; i++) {
         document.write(`Qtd. ${i}: R$ ${(produtoPrecoUnitario * i).toFixed(2)} <hr>`)
-   }
+    }
 
 
-    
+
 
 
 </script>

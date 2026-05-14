@@ -1,9 +1,9 @@
 <meta charset="utf-8">
 <script>
     let numeroMesas = 0, totalPessoas = 0, mediaMesa, mesaMaiorPessoas = 0, nMesa = 1, numeroPessoas
-    while (numeroPessoas !== 0) { 
+    while (numeroPessoas !== 0) {
         numeroPessoas = Number(prompt(`Insira o números de pessoas da ${nMesa}º mesa (0 para encerrar):`))
-        
+
         while (numeroPessoas < 0) {
             alert("O número de pessoas não pode ser negativo!")
             numeroPessoas = Number(prompt(`Insira o números de pessoas da ${nMesa}º mesa (0 para encerrar):`))
