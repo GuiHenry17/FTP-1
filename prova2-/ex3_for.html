@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 3 – Tabela de Preços dos Medicamentos | Farmácia Saúde Total</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --primary: #1b5e20;
+            --accent: #43a047;
+            --light: #f1f8f1;
+            --border: #81c784;
+            --text: #1a1a2e;
+            --muted: #6b7280;
+            --radius: 10px;
+        }
+
+        body {
+            font-family: 'IBM Plex Sans', Arial, sans-serif;
+            background: var(--light);
+            color: var(--text);
+            line-height: 1.65;
+            min-height: 100vh;
+        }
+
+        header {
+            background: var(--primary);
+            color: #fff;
+            padding: 0 32px;
+            height: 72px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, .25);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header .sys-emoji {
+            font-size: 2em;
+            line-height: 1;
+        }
+
+        header .sys-name {
+            font-size: 1.2em;
+            font-weight: 700;
+            letter-spacing: -.3px;
+        }
+
+        header .sys-sub {
+            font-size: .78em;
+            opacity: .75;
+            margin-top: 2px;
+            font-weight: 400;
+        }
+
+        header .version-pill {
+            margin-left: auto;
+            background: rgba(255, 255, 255, .2);
+            border: 1px solid rgba(255, 255, 255, .35);
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: .82em;
+            font-weight: 600;
+            letter-spacing: .5px;
+            white-space: nowrap;
+        }
+
+        .container {
+            max-width: 840px;
+            margin: 32px auto;
+            padding: 0 24px 48px;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: var(--radius);
+            padding: 24px 28px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, .06);
+            border: 1px solid rgba(0, 0, 0, .06);
+        }
+
+        .card-title {
+            font-size: .85em;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-transform: uppercase;
+            letter-spacing: .6px;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 4px 11px;
+            border-radius: 20px;
+            font-size: .75em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .8px;
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        .badge-while {
+            background: #1b5e20;
+            color: #fff;
+        }
+
+        .badge-dowhile {
+            background: #bf360c;
+            color: #fff;
+        }
+
+        .badge-for {
+            background: #0d47a1;
+            color: #fff;
+        }
+
+        footer {
+            text-align: center;
+            padding: 18px;
+            color: var(--muted);
+            font-size: .78em;
+            border-top: 1px solid rgba(0, 0, 0, .08);
+            margin-top: 20px;
+            background: #fff;
+        }
+
+        @media print {
+            body {
+                background: #fff;
+            }
+
+            header {
+                position: static;
+            }
+
+            .card {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                break-inside: avoid;
+            }
+        }
+
+        body {
+            background: #fff;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 28px 28px 60px;
+            background: #fff;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--primary);
+            text-decoration: none;
+            font-size: .88em;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .ex-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .ex-num-circle {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4em;
+            font-weight: 700;
+            flex-shrink: 0;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, .2);
+        }
+
+        .ex-header-text {
+            padding-top: 4px;
+        }
+
+        .ex-header-text h2 {
+            font-size: 1.3em;
+            font-weight: 700;
+            margin-top: 6px;
+            color: var(--text);
+        }
+
+        .enunciado {
+            border-left: 4px solid var(--primary);
+            background: var(--light);
+            padding: 20px 22px;
+            border-radius: 0 10px 10px 0;
+            margin-bottom: 24px;
+        }
+
+        .enunciado p {
+            margin-bottom: 14px;
+            font-size: .95em;
+        }
+
+        .enunciado h3 {
+            font-size: .78em;
+            text-transform: uppercase;
+            letter-spacing: .8px;
+            color: var(--primary);
+            font-weight: 700;
+            margin: 16px 0 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .enunciado ul {
+            padding-left: 22px;
+        }
+
+        .enunciado li {
+            margin: 6px 0;
+            font-size: .92em;
+            line-height: 1.55;
+        }
+
+        .enunciado li code {
+            font-family: 'IBM Plex Mono', monospace;
+            background: rgba(255, 255, 255, .7);
+            border: 1px solid var(--border);
+            padding: 1px 6px;
+            border-radius: 4px;
+            font-size: .88em;
+            color: var(--primary);
+        }
+
+        .saida-eco {
+            background: #fffde7;
+            border: 1px solid #f9e157;
+            border-radius: 6px;
+            padding: 2px 8px;
+            font-size: .82em;
+            color: #795548;
+            margin-left: 6px;
+            font-weight: 600;
+        }
+
+        .output-zone-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #f8f8f8;
+            border: 1.5px solid #ddd;
+            border-bottom: none;
+            padding: 10px 16px;
+            border-radius: 8px 8px 0 0;
+            font-size: .82em;
+            font-weight: 600;
+            color: #555;
+            margin-top: 28px;
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        .output-zone-label .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #f59e0b;
+            display: inline-block;
+            box-shadow: 16px 0 0 #22c55e, 32px 0 0 #ef4444;
+        }
+
+        .how-to {
+            background: #fff8e1;
+            border: 1px solid #fde68a;
+            border-radius: 8px;
+            padding: 12px 16px;
+            font-size: .84em;
+            color: #78350f;
+            margin-top: 16px;
+        }
+
+        .how-to strong {
+            color: #92400e;
+        }
+
+        .how-to code {
+            font-family: 'IBM Plex Mono', monospace;
+            background: rgba(0, 0, 0, .06);
+            padding: 1px 5px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <span class="sys-emoji">🏥</span>
+        <div>
+            <div class="sys-name">Farmácia Saúde Total</div>
+            <div class="sys-sub">Prova Prática – Estruturas de Repetição &nbsp;·&nbsp; Versão A</div>
+        </div>
+        <span class="version-pill">EX 3 / 3</span>
+    </header>
+
+    <div class="container">
+
+        <a href="index.html" class="back-link">← Voltar ao índice da prova</a>
+
+        <div class="ex-header">
+            <div class="ex-num-circle">3</div>
+            <div class="ex-header-text">
+                <span class="badge badge-for">⟳ for</span>
+                <h2>Tabela de Preços dos Medicamentos</h2>
+            </div>
+        </div>
+
+        <div class="enunciado">
+            <p>O gerente da farmácia precisa cadastrar e exibir a tabela de preços de <strong>N</strong> medicamentos no
+                sistema. O valor de N é informado no início do programa.</p>
+            <h3>📥 Entradas</h3>
+            <ul>
+                <li>N: quantidade de medicamentos a cadastrar (inteiro positivo)</li>
+                <li>Para cada medicamento (repetir N vezes): nome e preço unitário (R$)</li>
+            </ul>
+            <h3>📤 Saídas esperadas</h3>
+            <ul>
+                <li>Quantidade informada: <em>"N = [N] medicamento(s)"</em></li>
+                <li>Tabela com todos os medicamentos cadastrados: <em>"Medicamento [i]: [nome] – R$ [preço]"</em></li>
+                <li>Preço médio dos medicamentos cadastrados (R$)</li>
+                <li>Medicamento mais caro: nome e preço (R$)</li>
+                <li>Medicamento mais barato: nome e preço (R$)</li>
+            </ul>
+        </div>
+
+        <div class="how-to">
+            <strong>💡 Como responder:</strong> Edite este arquivo no VS Code,
+            escreva seu código JavaScript dentro da tag <code>&lt;script&gt;</code> abaixo e salve.
+            Atualize esta aba do navegador (<code>F5</code>) para executar e conferir a saída.
+        </div>
+
+        <div class="output-zone-label">
+            <span class="dot"></span>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; saída do programa (aparece aqui ao executar)
+        </div>
+
+    </div>
+
+    <script>
+
+        // ================================================================
+        //   Exercício 3 – Tabela de Preços dos Medicamentos
+        //   Estrutura: FOR
+        //   Farmácia Saúde Total – Versão A
+        // Fundamentos de Programação · UTFPR Campus Toledo · 2026.1
+        // ================================================================
+        // Aluno: Guilherme Henrique Santos Pereira  RA: a2872641
+        // ================================================================
+        //
+        // ATENÇÃO: exiba na saída TODOS os valores informados pelo usuário.
+        //
+        // >>> Escreva seu código abaixo <<<
+
+        let numeroMedicamentos, precoMedio, nomeMedicamento, valorTotal = 0, precoMedicamento, nomeMaisCaro, nomeMaisBarato, precoMaisBarato, precoMaisCaro
+        numeroMedicamentos = parseInt(prompt(`Insira a quantidade de medicamentos a cadastrar (inteiro positivo):`))
+
+        // Este bloco (while) está sendo usado exclusivamente para validação, caso não possa haver outras estruturas dentro desse código além do for, favor considerar remover esse bloco já que o código funcionará normalmente
+        while (numeroMedicamentos <= 0) {
+            alert(`O número de medicamentos deve ser inteiro e positivo!`)
+            numeroMedicamentos = parseInt(prompt(`Insira a quantidade de medicamentos a cadastrar (inteiro positivo):`))
+        }
+
+        for (let i = 1; i <= numeroMedicamentos; i++) {
+            nomeMedicamento = prompt(`Insira o nome do ${i}º medicamento:`)
+            precoMedicamento = Number(prompt(`Insira o preço do ${i}º medicamento:`))
+
+            if (i == 1) {
+                nomeMaisBarato = nomeMedicamento, nomeMaisCaro = nomeMedicamento
+                precoMaisBarato = precoMedicamento, precoMaisCaro = precoMedicamento
+            } else if (precoMedicamento > precoMaisCaro) {
+                precoMaisCaro = precoMedicamento
+                nomeMaisCaro = nomeMedicamento
+            } else {
+                precoMaisBarato = precoMedicamento
+                nomeMaisBarato = nomeMedicamento
+            }
+            
+            valorTotal += precoMedicamento
+            document.write(`Medicamento [${i}]: [${nomeMedicamento}] – R$ [${precoMedicamento}] <br>`)
+            console.log(precoMaisBarato)
+            console.log(precoMaisCaro)
+        }
+
+        if (numeroMedicamentos > 0 || isFinite(numeroMedicamentos)) {
+            precoMedio = valorTotal / numeroMedicamentos
+            document.write(`Quantidade de medicamentos informados: "N = [${numeroMedicamentos}] medicamento(s)" <br>`)
+            document.write(`Preço médio dos medicamentos cadastrados (R$): ${precoMedio.toFixed(2)} <br>`)
+            document.write(`Medicamento mais caro: ${nomeMaisCaro} = R$ ${precoMaisCaro.toFixed(2)} <br>`)
+            document.write(`Medicamento mais barato: ${nomeMaisBarato} = R$ ${precoMaisBarato.toFixed(2)}`)
+        } else {
+            document.write(`Nenhum medicamento foi cadastrado.`)
+        }
+
+
+        // >>> Fim do código <<<
+
+    </script>
+
+    <footer>
+        Universidade Tecnológica Federal do Paraná &nbsp;·&nbsp; Campus Toledo &nbsp;·&nbsp; Fundamentos de Programação
+        – 2026.1
+    </footer>
+</body>
+
+</html>

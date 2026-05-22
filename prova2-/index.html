@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Farmácia Saúde Total – Prova Prática | Fundamentos de Programação</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --primary: #1b5e20;
+      --accent: #43a047;
+      --light: #f1f8f1;
+      --border: #81c784;
+      --text: #1a1a2e;
+      --muted: #6b7280;
+      --radius: 10px;
+    }
+
+    body {
+      font-family: 'IBM Plex Sans', Arial, sans-serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.65;
+      min-height: 100vh;
+    }
+
+    header {
+      background: var(--primary);
+      color: #fff;
+      padding: 0 32px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, .25);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    header .sys-emoji {
+      font-size: 2em;
+      line-height: 1;
+    }
+
+    header .sys-name {
+      font-size: 1.2em;
+      font-weight: 700;
+      letter-spacing: -.3px;
+    }
+
+    header .sys-sub {
+      font-size: .78em;
+      opacity: .75;
+      margin-top: 2px;
+      font-weight: 400;
+    }
+
+    header .version-pill {
+      margin-left: auto;
+      background: rgba(255, 255, 255, .2);
+      border: 1px solid rgba(255, 255, 255, .35);
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: .82em;
+      font-weight: 600;
+      letter-spacing: .5px;
+      white-space: nowrap;
+    }
+
+    .container {
+      max-width: 840px;
+      margin: 32px auto;
+      padding: 0 24px 48px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, .06);
+      border: 1px solid rgba(0, 0, 0, .06);
+    }
+
+    .card-title {
+      font-size: .85em;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--light);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-transform: uppercase;
+      letter-spacing: .6px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 11px;
+      border-radius: 20px;
+      font-size: .75em;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .8px;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .badge-while {
+      background: #1b5e20;
+      color: #fff;
+    }
+
+    .badge-dowhile {
+      background: #bf360c;
+      color: #fff;
+    }
+
+    .badge-for {
+      background: #0d47a1;
+      color: #fff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 18px;
+      color: var(--muted);
+      font-size: .78em;
+      border-top: 1px solid rgba(0, 0, 0, .08);
+      margin-top: 20px;
+      background: #fff;
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      header {
+        position: static;
+      }
+
+      .card {
+        box-shadow: none;
+        border: 1px solid #ddd;
+        break-inside: avoid;
+      }
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px 24px;
+    }
+
+    .info-field {
+      border-bottom: 1.5px solid var(--border);
+      padding-bottom: 6px;
+    }
+
+    .info-label {
+      font-size: .72em;
+      text-transform: uppercase;
+      letter-spacing: .7px;
+      color: var(--muted);
+      margin-bottom: 3px;
+    }
+
+    .info-value {
+      font-weight: 600;
+      font-size: .95em;
+      color: var(--text);
+    }
+
+    .info-value.blank {
+      color: #ccc;
+      font-style: italic;
+    }
+
+    .instrucoes ol {
+      padding-left: 22px;
+    }
+
+    .instrucoes li {
+      margin: 8px 0;
+      font-size: .92em;
+      line-height: 1.55;
+    }
+
+    .instrucoes li strong {
+      color: var(--primary);
+    }
+
+    .instrucoes code {
+      font-family: 'IBM Plex Mono', monospace;
+      background: var(--light);
+      border: 1px solid var(--border);
+      padding: 1px 6px;
+      border-radius: 4px;
+      font-size: .88em;
+      color: var(--primary);
+    }
+
+    .ex-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 20px;
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      text-decoration: none;
+      color: var(--text);
+      margin-bottom: 12px;
+      transition: all .2s;
+      background: #fff;
+    }
+
+    .ex-card:hover {
+      border-color: var(--primary);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, .1);
+      transform: translateX(3px);
+    }
+
+    .ex-num {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2em;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .ex-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .ex-top {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 4px;
+      flex-wrap: wrap;
+    }
+
+    .ex-title {
+      font-weight: 600;
+      font-size: .97em;
+    }
+
+    .ex-preview {
+      font-size: .82em;
+      color: var(--muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .ex-arrow {
+      color: var(--primary);
+      font-size: 1.3em;
+      font-weight: 700;
+      flex-shrink: 0;
+      transition: transform .2s;
+    }
+
+    .ex-card:hover .ex-arrow {
+      transform: translateX(4px);
+    }
+
+    .alerta {
+      background: #fff8e1;
+      border-left: 4px solid #f59e0b;
+      padding: 10px 16px;
+      border-radius: 0 8px 8px 0;
+      font-size: .88em;
+      margin-top: 12px;
+      color: #78350f;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <span class="sys-emoji">🏥</span>
+    <div>
+      <div class="sys-name">Farmácia Saúde Total</div>
+      <div class="sys-sub">Sistema de Gestão de Farmácia &nbsp;·&nbsp; Prova Prática – Estruturas de Repetição</div>
+    </div>
+    <span class="version-pill">VERSÃO A</span>
+  </header>
+
+  <div class="container">
+
+    <div class="card">
+      <div class="card-title">📋 Informações da Prova</div>
+      <div class="info-grid">
+        <div class="info-field">
+          <div class="info-label">Disciplina</div>
+          <div class="info-value">Fundamentos de Programação</div>
+        </div>
+        <div class="info-field">
+          <div class="info-label">Curso / Período</div>
+          <div class="info-value">TSI – 2026.1</div>
+        </div>
+        <div class="info-field">
+          <div class="info-label">Versão da Prova</div>
+          <div class="info-value">Versão A</div>
+        </div>
+        <div class="info-field">
+          <div class="info-label">Duração</div>
+          <div class="info-value">90 minutos</div>
+        </div>
+        <div class="info-field" style="grid-column:1/-1;">
+          <div class="info-label">Professora</div>
+          <div class="info-value">Rosane Passarini &nbsp;·&nbsp; UTFPR Campus Toledo</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">👤 Identificação do Aluno</div>
+      <div class="info-grid">
+        <div class="info-field" style="grid-column:1/-1;">
+          <div class="info-label">Nome Completo</div>
+          <div class="info-value blank">Guilherme Henrique Santos Pereira</div>
+        </div>
+        <div class="info-field">
+          <div class="info-label">RA (Registro Acadêmico)</div>
+          <div class="info-value blank">a2872641</div>
+        </div>
+        <div class="info-field">
+          <div class="info-label">Turma</div>
+          <div class="info-value blank">SI13A - Noturno</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card instrucoes">
+      <div class="card-title">📌 Instruções Gerais</div>
+      <ol>
+        <li>Esta prova é <strong>individual</strong>. Não é permitida comunicação entre alunos.</li>
+        <li>Você pode consultar os <strong>slides e listas de exercícios</strong> da disciplina (material impresso ou
+          digital).</li>
+        <li>Não é permitido o uso de <strong>IA generativa</strong> (ChatGPT, Copilot, Gemini etc.).</li>
+        <li>Para cada exercício, escreva seu código JavaScript dentro da tag <code>&lt;script&gt;</code> presente no
+          arquivo correspondente.</li>
+        <li>Use <code>prompt()</code> para entradas e <code>document.write()</code> para saídas.</li>
+        <li>Padrão de declaração: <code>let variavel; variavel = Number(prompt("..."));</code></li>
+        <li>A saída deve exibir <strong>todos os valores informados pelo usuário</strong> (para facilitar a correção).
+        </li>
+      </ol>
+      <div class="alerta">⚠️ Se preferir criar arquivos de solução separados, <strong>atualize os links desta
+          página</strong> para apontar para seus novos arquivos antes de entregar.</div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🧩 Exercícios – Farmácia Saúde Total</div>
+      <p style="font-size:.88em; color:var(--muted); margin-bottom:16px;">Clique no exercício para abri-lo em nova aba.
+        Edite no VS Code e atualize o navegador para testar.</p>
+
+      <a href="ex1_while.html" class="ex-card" target="_blank">
+        <div class="ex-num">1</div>
+        <div class="ex-info">
+          <div class="ex-top"><span class="badge badge-while">↺ while</span> <span class="ex-title">Caixa do Dia</span>
+          </div>
+          <p class="ex-preview">O caixa da Farmácia Saúde Total registra as vendas realizadas durante o dia, uma a uma.
+            Para encerra...</p>
+        </div>
+        <span class="ex-arrow">→</span>
+      </a>
+      <a href="ex2_dowhile.html" class="ex-card" target="_blank">
+        <div class="ex-num">2</div>
+        <div class="ex-info">
+          <div class="ex-top"><span class="badge badge-dowhile">↻ do-while</span> <span class="ex-title">Atendimento com
+              Receita Médica</span></div>
+          <p class="ex-preview">O farmacêutico atende clientes que chegam com receita médica. Para cada atendimento são
+            registrados ...</p>
+        </div>
+        <span class="ex-arrow">→</span>
+      </a>
+      <a href="ex3_for.html" class="ex-card" target="_blank">
+        <div class="ex-num">3</div>
+        <div class="ex-info">
+          <div class="ex-top"><span class="badge badge-for">⟳ for</span> <span class="ex-title">Tabela de Preços dos
+              Medicamentos</span></div>
+          <p class="ex-preview">O gerente da farmácia precisa cadastrar e exibir a tabela de preços de N medicamentos no
+            sistema. O ...</p>
+        </div>
+        <span class="ex-arrow">→</span>
+      </a>
+    </div>
+
+  </div>
+  <footer>
+    Universidade Tecnológica Federal do Paraná &nbsp;·&nbsp; Campus Toledo &nbsp;·&nbsp; Fundamentos de Programação –
+    2026.1
+  </footer>
+</body>
+
+</html>
