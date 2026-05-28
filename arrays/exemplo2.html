@@ -1,0 +1,15 @@
+<meta charset="utf-8">
+<script src="functions.js"></script>
+<script>
+    let precos = [], qtd
+
+    alert("Montado o cardápio");
+    qtd = Number(prompt(`Informe a quantidade de produtos a precificar do cardápio: `))
+
+    alert("Informe os preços dos produtos do cardápio:")
+    preencherPrecos(precos, qtd)
+
+    document.write(`#### Itens do Cardápio ####<hr>`);
+    exibirPrecos(precos)
+
+</script>

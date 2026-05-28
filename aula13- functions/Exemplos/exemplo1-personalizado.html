@@ -1,0 +1,18 @@
+<meta charset="utf-8">
+<script>
+    function exibirBemVindo(cliente) {
+        document.write(`Boa tarde, ${cliente}! <br>`)
+    }
+
+
+    let nome = prompt(`Informe seu nome: `);
+
+    exibirBemVindo(nome);
+    exibirBemVindo(nome); // chamar 2x para mostrar reutilização
+
+
+    /*Ponto de discussão: Chamamos exibirBemVindo() duas vezes sem reescrever nada. 
+    Isso é reutilização de código — um dos maiores benefícios das funções. 
+    Se a mensagem mudar, basta alterar dentro da função e todas as chamadas são atualizadas.*/
+
+</script>

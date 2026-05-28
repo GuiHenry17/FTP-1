@@ -1,0 +1,14 @@
+<meta charset="utf-8">
+<script>
+    function exibirPedido(nomeLanche, quantidade) {
+        document.write(`Pedido: <br> Quandtidade: ${quantidade} <br>Produto:  ${nomeLanche} <br><br>`);
+    }
+
+    exibirPedido("X-Burguer", 2);
+    exibirPedido("Suco de Laranja", 3);
+
+    /*Ponto de discussão: O que acontece se inverter a ordem?
+    exibirPedido(2, "X-Burguer")? 
+    Testar: a saída fica "Pedido: X-Burguerx 2" — a ordem dos argumentos é fundamental. */
+
+</script>

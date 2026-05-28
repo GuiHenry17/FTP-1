@@ -1,0 +1,27 @@
+<meta charset="utf-8">
+<script>
+   function calcularTotal(preco, quantidade) {
+      return preco * quantidade;
+   }
+
+   let nomeLanche;
+   nomeLanche = prompt("Qual o lanche?");
+
+   let preco;
+   preco = Number(prompt("Preço unitário (R$):"));
+
+   let quantidade;
+   quantidade = Number(prompt("Quantidade:"));
+
+   let total;
+   total = calcularTotal(preco, quantidade);
+
+   document.write(`Pedido <br> Quantidade: ${quantidade} <br>
+                    Produto: ${nomeLanche} <br>
+                    Total: R$ ${total.toFixed(2)}`);
+
+   /* Ponto de discussão: O que acontece se remover o return?
+   Testar: total fica undefined, e a saída fica "Total: R$ NaN". 
+   O return é o que transforma a função em algo que produz um resultado. */
+
+</script>

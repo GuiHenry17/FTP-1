@@ -1,0 +1,15 @@
+<meta charset="utf-8">
+<script src="functions.js"></script>
+<script>
+    let produtos = [], qtd
+
+    alert("Montado o cardápio");
+    qtd = Number(prompt(`Informe a quantidade de itens do cardápio: `))
+
+    alert("Informe os preços dos produtos do cardápio:")
+    preencherCardapio(produtos, qtd)
+
+    document.write(`#### Itens do Cardápio ####<hr>`);
+    exibirCardapio(produtos)
+
+</script>
