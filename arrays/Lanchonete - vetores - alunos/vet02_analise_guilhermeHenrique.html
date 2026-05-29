@@ -1,0 +1,102 @@
+<meta charset="UTF-8">
+<title>VET 02 — Cardápio com Análise</title>
+<style>
+  body {
+    font-family: 'Georgia', serif;
+    background: #FFF8F0;
+    color: #2A1400;
+    margin: 0;
+  }
+
+  header {
+    background: #3D1C02;
+    border-bottom: 4px solid #7C4E00;
+    padding: 14px 28px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  header .tag {
+    background: #7C4E00;
+    color: #fff;
+    font-family: 'Courier New', monospace;
+    font-size: .75rem;
+    font-weight: bold;
+    padding: 3px 10px;
+    border-radius: 12px;
+  }
+
+  header .titulo {
+    color: #fff;
+    font-size: 1.1rem;
+  }
+
+  header .sub {
+    color: rgba(255, 255, 255, .50);
+    font-size: .80rem;
+    font-style: italic;
+    margin-top: 2px;
+  }
+
+  main {
+    max-width: 700px;
+    margin: 36px auto;
+    padding: 0 24px 60px;
+  }
+</style>
+
+<header>
+  <div>
+    <span class="tag">VET. 02 — INTERMEDIÁRIO</span>
+    <div class="titulo">Cardápio com Análise de Média</div>
+    <div class="sub">Vetores + média + condicional dentro do laço</div>
+  </div>
+</header>
+
+<main>
+  <script>
+    let produtos = [], precos = [], i, tam, soma = 0;
+
+    alert(`Montando o Cardápio`);
+    tam = Number(prompt(`Informe a quantidade de produtos do Cardápio`));
+
+    //validação do tamanho 
+    while (tam <= 0 || isNaN(tam)) {
+      tam = Number(prompt(`Informe a quantidade de produtos do Cardápio`));
+    }
+
+    //opção2: preenchendo os vetores de forma intercalada
+    for (i = 0; i < tam; i++) {
+      produtos[i] = prompt(`Informe o nome do ${i + 1}o. produto: `);
+      precos[i] = Number(prompt(`Informe o preço do ${i + 1}o. produto: `));
+
+      //validação do preço
+      while (precos[i] < 0 || isNaN(precos[i])) {
+        precos[i] = Number(prompt("Valor inválido. Preço do produto " + (i + 1) + ": R$ "));
+      }
+
+      soma = soma + precos[i];  // somando os preços para calcular a média
+
+    }
+
+    // Cálculo da média (tam > 0 garantido pela validação acima)
+    media = soma / tam;
+
+    // ── Saída ──────────────────────────────────────────────
+    document.write("<h2 style='color:#E8821A;margin-bottom:12px'>Cardápio da Lanchonete</h2>");
+
+    for (let i = 0; i < tam; i++) {
+      if (precos[i] > media) {
+        document.write(produtos[i] + ": R$ " + precos[i].toFixed(2) +
+          " <strong>** acima da media</strong><br>");
+      } else {
+        document.write(produtos[i] + ": R$ " + precos[i].toFixed(2) + "<br>");
+      }
+    }
+
+    document.write("<br>Media dos precos: R$ " + media.toFixed(2));
+
+
+  </script>
+</main>

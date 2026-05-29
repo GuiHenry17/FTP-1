@@ -1,0 +1,103 @@
+<meta charset="UTF-8">
+<title>VET 03 — Cardápio Completo</title>
+<style>
+  body {
+    font-family: 'Georgia', serif;
+    background: #FFF8F0;
+    color: #2A1400;
+    margin: 0;
+  }
+
+  header {
+    background: #3D1C02;
+    border-bottom: 4px solid #8B1A1A;
+    padding: 14px 28px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  header .tag {
+    background: #8B1A1A;
+    color: #fff;
+    font-family: 'Courier New', monospace;
+    font-size: .75rem;
+    font-weight: bold;
+    padding: 3px 10px;
+    border-radius: 12px;
+  }
+
+  header .titulo {
+    color: #fff;
+    font-size: 1.1rem;
+  }
+
+  header .sub {
+    color: rgba(255, 255, 255, .50);
+    font-size: .80rem;
+    font-style: italic;
+    margin-top: 2px;
+  }
+
+  main {
+    max-width: 700px;
+    margin: 36px auto;
+    padding: 0 24px 60px;
+  }
+</style>
+
+<header>
+  <div>
+    <span class="tag">VET. 03 — AVANÇADO</span>
+    <div class="titulo">Cardápio Completo com Funções</div>
+    <div class="sub">funcoes.js: preencherVetor, preencherPrecos, calcularMedia, encontrarMaior, encontrarMenor</div>
+  </div>
+</header>
+
+<main>
+  <script src="funcoes.js"></script>
+  <script>
+    let tam
+
+    alert(`Montando o Cardápio`);
+    tam = Number(prompt(`Informe a quantidade de produtos do Cardápio`));
+
+    //validação do tamanho 
+    while (tam <= 0 || isNaN(tam)) {
+      tam = Number(prompt(`Informe a quantidade de produtos do Cardápio`));
+    }
+
+
+    let produtos = preencherVetor(tam)
+    let precos = preencherPrecos(tam)
+    let media = calcularMedia(tam, precos)
+    let maior = encontrarMaior(tam, precos)
+    let menor = encontrarMenor(tam, precos)
+
+
+
+    // ── Saída ──────────────────────────────────────────────
+    document.write("<h2 style='color:#E8821A;margin-bottom:12px'>Cardápio da Lanchonete</h2>");
+
+    for (i = 0; i < tam; i++) {
+      document.write(`Produto ${i + 1}: ${produtos[i]} <br>`);
+    }
+
+    document.write(`<br>Lista de Preços <hr>`);
+
+    for (i = 0; i < tam; i++) {
+      document.write(`Preço do produto ${i + 1}  [${produtos[i]}]: R$ ${precos[i].toFixed(2)} <br>`);
+    }
+
+    document.write(`<br>Média dos produtos <hr>`)
+    document.write(`Média: R$ ${media.toFixed(2)}`)
+
+    document.write(`<br><br>Produto com maior preço:<hr>`)
+    document.write(`Produto ${maior + 1}: ${produtos[maior]} `)
+
+    document.write(`<br><br>Produto com menor preço:<hr>`)
+    document.write(`Produto ${menor + 1}: ${produtos[menor]} `)
+
+
+  </script>
+</main>

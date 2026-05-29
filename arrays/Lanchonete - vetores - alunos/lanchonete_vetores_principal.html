@@ -1,0 +1,425 @@
+<meta charset="utf-8">
+<title>Lanchonete do Código — Vetores</title>
+<style>
+  /* ── Variáveis ─────────────────────────────────────────── */
+  :root {
+    --laranja: #E8821A;
+    --laranja2: #C96B0E;
+    --marrom: #3D1C02;
+    --creme: #FFF8F0;
+    --cinza: #F2EDE8;
+    --texto: #2A1400;
+    --base: #1B6130;
+    --base2: #EBF8EF;
+    --inter: #7C4E00;
+    --inter2: #FFF3E0;
+    --avanc: #8B1A1A;
+    --avanc2: #FFF0F0;
+    --sombra: 0 2px 12px rgba(61, 28, 2, .10);
+    --sombra2: 0 6px 24px rgba(61, 28, 2, .16);
+  }
+
+  /* ── Reset / base ──────────────────────────────────────── */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Georgia', serif;
+    background: var(--creme);
+    color: var(--texto);
+    min-height: 100vh;
+  }
+
+  /* ── Cabeçalho ─────────────────────────────────────────── */
+  header {
+    background: var(--marrom);
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header-faixa {
+    background: var(--laranja);
+    height: 6px;
+    width: 100%;
+  }
+
+  .header-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 32px 24px 28px;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+
+  .logo {
+    width: 72px;
+    height: 72px;
+    background: var(--laranja);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 4px rgba(232, 130, 26, .30);
+    animation: pulso 3s ease-in-out infinite;
+  }
+
+  @keyframes pulso {
+
+    0%,
+    100% {
+      box-shadow: 0 0 0 4px rgba(232, 130, 26, .30);
+    }
+
+    50% {
+      box-shadow: 0 0 0 10px rgba(232, 130, 26, .10);
+    }
+  }
+
+  .header-titulo h1 {
+    font-size: 1.75rem;
+    color: #fff;
+    letter-spacing: .03em;
+    line-height: 1.2;
+  }
+
+  .header-titulo h1 span {
+    color: var(--laranja);
+  }
+
+  .header-titulo p {
+    margin-top: 6px;
+    font-size: .88rem;
+    color: rgba(255, 255, 255, .55);
+    font-style: italic;
+    letter-spacing: .04em;
+  }
+
+  .badge-utfpr {
+    margin-left: auto;
+    text-align: right;
+    color: rgba(255, 255, 255, .40);
+    font-size: .75rem;
+    line-height: 1.6;
+    font-family: 'Courier New', monospace;
+  }
+
+  /* ── Aviso ─────────────────────────────────────────────── */
+  .aviso {
+    background: #FFFBEB;
+    border-left: 4px solid var(--laranja);
+    max-width: 960px;
+    margin: 28px auto 0;
+    padding: 14px 20px;
+    border-radius: 0 6px 6px 0;
+    font-size: .85rem;
+    color: #7A4500;
+    line-height: 1.6;
+  }
+
+  .aviso strong {
+    color: var(--laranja2);
+  }
+
+  .aviso code {
+    background: rgba(232, 130, 26, .12);
+    padding: 1px 5px;
+    border-radius: 3px;
+    font-size: .82rem;
+    font-family: 'Courier New', monospace;
+  }
+
+  /* ── Container principal ───────────────────────────────── */
+  main {
+    max-width: 960px;
+    margin: 36px auto 60px;
+    padding: 0 24px;
+  }
+
+  .bloco {
+    margin-bottom: 48px;
+  }
+
+  .bloco-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--cinza);
+  }
+
+  .bloco-tag {
+    font-family: 'Courier New', monospace;
+    font-size: .80rem;
+    font-weight: bold;
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+  }
+
+  .tag-vet {
+    background: var(--marrom);
+    color: #fff;
+  }
+
+  .bloco-header h2 {
+    font-size: 1.15rem;
+    font-weight: normal;
+    color: #555;
+    letter-spacing: .02em;
+  }
+
+  /* ── Grade ─────────────────────────────────────────────── */
+  .grade {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 16px;
+  }
+
+  /* ── Card ──────────────────────────────────────────────── */
+  .card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: var(--sombra);
+    overflow: hidden;
+    transition: transform .18s, box-shadow .18s;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--sombra2);
+  }
+
+  .card-topo {
+    height: 5px;
+    width: 100%;
+  }
+
+  .topo-base {
+    background: var(--base);
+  }
+
+  .topo-inter {
+    background: var(--inter);
+  }
+
+  .topo-avanc {
+    background: var(--avanc);
+  }
+
+  .card-body {
+    padding: 18px 20px 14px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .card-icone {
+    font-size: 1.6rem;
+    line-height: 1;
+  }
+
+  .card-titulo {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--marrom);
+    margin-top: 4px;
+    line-height: 1.3;
+  }
+
+  .card-objetivo {
+    font-size: .78rem;
+    color: #888;
+    font-style: italic;
+  }
+
+  .card-desc {
+    font-size: .83rem;
+    color: #555;
+    line-height: 1.55;
+    margin-top: 4px;
+    flex: 1;
+  }
+
+  .card-rodape {
+    padding: 12px 20px 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .btn-abrir {
+    display: inline-block;
+    padding: 7px 16px;
+    border-radius: 6px;
+    font-size: .80rem;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: .04em;
+    transition: background .15s, color .15s;
+    cursor: pointer;
+  }
+
+  .btn-base {
+    background: var(--base2);
+    color: var(--base);
+    border: 1.5px solid var(--base);
+  }
+
+  .btn-inter {
+    background: var(--inter2);
+    color: var(--inter);
+    border: 1.5px solid var(--inter);
+  }
+
+  .btn-avanc {
+    background: var(--avanc2);
+    color: var(--avanc);
+    border: 1.5px solid var(--avanc);
+  }
+
+  .btn-base:hover {
+    background: var(--base);
+    color: #fff;
+  }
+
+  .btn-inter:hover {
+    background: var(--inter);
+    color: #fff;
+  }
+
+  .btn-avanc:hover {
+    background: var(--avanc);
+    color: #fff;
+  }
+
+  .num-exercicio {
+    font-size: .72rem;
+    color: #bbb;
+    font-family: 'Courier New', monospace;
+    margin-left: auto;
+  }
+
+  /* ── Rodapé ────────────────────────────────────────────── */
+  footer {
+    background: var(--marrom);
+    color: rgba(255, 255, 255, .45);
+    text-align: center;
+    padding: 20px;
+    font-size: .78rem;
+    letter-spacing: .05em;
+    font-family: 'Courier New', monospace;
+  }
+
+  footer span {
+    color: var(--laranja);
+  }
+</style>
+
+<header>
+  <div class="header-faixa"></div>
+  <div class="header-inner">
+    <div class="logo">📦</div>
+    <div class="header-titulo">
+      <h1>Lanchonete do <span>Código</span></h1>
+      <p>Vetores — Saída Esperada · Fundamentos de Programação · TSI 2026.1</p>
+    </div>
+    <div class="badge-utfpr">
+      UTFPR<br>Campus Toledo<br>JavaScript
+    </div>
+  </div>
+</header>
+
+<div class="aviso">
+  <strong>⚙ Como usar:</strong>
+  Cada botão abre o arquivo do exercício correspondente. Substitua o trecho
+  <code>guilhermeHenrique</code> nos links abaixo pelo nome que você usou ao salvar os arquivos —
+  por exemplo: <code>vet01_cardapio_ana.html</code>. Os arquivos devem estar na
+  <strong>mesma pasta</strong> que este arquivo.
+  O exercício <strong>Nível Avançado</strong> requer que <code>funcoes.js</code> esteja na mesma pasta.
+</div>
+
+<main>
+
+  <!-- ══════════════════════════════════════ BLOCO VETORES -->
+  <section class="bloco">
+    <div class="bloco-header">
+      <span class="bloco-tag tag-vet">vetores</span>
+      <h2>Desafio em Duplas — Arrays Unidimensionais</h2>
+    </div>
+    <div class="grade">
+
+      <div class="card">
+        <div class="card-topo topo-base"></div>
+        <div class="card-body">
+          <div class="card-icone">🟢</div>
+          <div class="card-titulo">Cardápio da Lanchonete</div>
+          <div class="card-objetivo">Nível Base — leitura e exibição</div>
+          <div class="card-desc">
+            Lê N nomes de produtos e seus preços. Preenche dois vetores
+            com <code>for</code> e exibe o cardápio completo.
+          </div>
+        </div>
+        <div class="card-rodape">
+          <a class="btn-abrir btn-base" href="vet01_cardapio_guilhermeHenrique.html" target="_blank">▶ Abrir</a>
+          <span class="num-exercicio">VET. 01</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-topo topo-inter"></div>
+        <div class="card-body">
+          <div class="card-icone">🟡</div>
+          <div class="card-titulo">Cardápio com Análise</div>
+          <div class="card-objetivo">Nível Intermediário — média e comparação</div>
+          <div class="card-desc">
+            Além do cardápio, calcula a média dos preços e destaca
+            os produtos acima da média no relatório.
+          </div>
+        </div>
+        <div class="card-rodape">
+          <a class="btn-abrir btn-inter" href="vet02_analise_guilhermeHenrique.html" target="_blank">▶ Abrir</a>
+          <span class="num-exercicio">VET. 02</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-topo topo-avanc"></div>
+        <div class="card-body">
+          <div class="card-icone">🔴</div>
+          <div class="card-titulo">Cardápio Completo</div>
+          <div class="card-objetivo">Nível Avançado — funções, maior e menor</div>
+          <div class="card-desc">
+            Usa <code>funcoes.js</code> para encapsular cada operação.
+            Encontra o produto mais caro e o mais barato, exibindo posição e valor.
+          </div>
+        </div>
+        <div class="card-rodape">
+          <a class="btn-abrir btn-avanc" href="vet03_completo_guilhermeHenrique.html" target="_blank">▶ Abrir</a>
+          <span class="num-exercicio">VET. 03</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  UTFPR · Campus Toledo · Fundamentos de Programação · TSI 2026.1 &nbsp;|&nbsp;
+  Lanchonete do <span>Código</span> — Vetores
+</footer>
