@@ -1,0 +1,17 @@
+<meta charset="utf-8">
+<script src="../funcoes.js"></script>
+<script>
+    let numeros = [], menor
+    alert('Ler 6 valores e encontrar o menor!')
+    numeros = preencherVetor(6)
+    validarNumeros(numeros)
+    menor = encontrarMenor(numeros)
+
+    document.write(`### RELATÓRIO DE MENOR NÚMERO ### <hr>`)
+
+    exibirElementosDeVetor(numeros, 'Número')
+
+    document.write(`<hr>Menor número: ${menor}`)
+
+
+</script>

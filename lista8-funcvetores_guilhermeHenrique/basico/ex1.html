@@ -1,0 +1,18 @@
+<meta charset="utf-8">
+<script src="../funcoes.js"></script>
+<script>
+    let numeros = []
+    alert('Ler 5 números e exibir números por ordem de inserção!')
+    numeros = preencherVetor(5)
+    validarNumeros(numeros)
+    transformarEmInteiros(numeros)
+
+
+    document.write(`### RELATÓRIO DE NÚMEROS ### <hr>`)
+
+    exibirElementosDeVetor(numeros, 'Número')
+
+    document.write(` <hr>Vetor completo por ordem de inserção: ${exibirVetor(numeros)}`)
+
+
+</script>

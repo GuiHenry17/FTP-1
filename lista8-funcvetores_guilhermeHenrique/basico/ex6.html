@@ -1,0 +1,18 @@
+<meta charset="utf-8">
+<script src="../funcoes.js"></script>
+<script>
+    let numeros = [], numerosInvertidos
+    alert('Ler 5 números e exibir números por ordem inversa de inserção!')
+    numeros = preencherVetor(5)
+    validarNumeros(numeros)
+    numerosInvertidos = inverterVetor(numeros)
+
+
+    document.write(`### RELATÓRIO DE NÚMEROS EM ORDEM INVERSA ### <hr>`)
+
+    exibirElementosDeVetor(numerosInvertidos, 'Número (inverso)')
+
+    document.write(` <hr>Vetor completo por ordem inversa de inserção: ${exibirVetor(numerosInvertidos)}`)
+
+
+</script>

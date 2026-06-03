@@ -1,0 +1,17 @@
+<meta charset="utf-8">
+<script src="../funcoes.js"></script>
+<script>
+    let notas = [], soma
+    alert('Ler 6 notas e somar o total!')
+    notas = preencherVetor(6)
+    validarNumeros(notas)
+    soma = calcularSoma(notas)
+
+    document.write(`### RELATÓRIO DE SOMA DE NOTAS ### <hr>`)
+
+    exibirElementosDeVetor(notas, 'Nota')
+
+    document.write(`<hr>Soma total das notas: ${soma}`)
+
+
+</script>

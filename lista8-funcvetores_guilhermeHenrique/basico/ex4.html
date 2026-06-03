@@ -1,0 +1,17 @@
+<meta charset="utf-8">
+<script src="../funcoes.js"></script>
+<script>
+    let temperaturas = [], media
+    alert('Ler 10 temperaturas e calcular a média!')
+    temperaturas = preencherVetor(10)
+    validarNumeros(temperaturas)
+    media = calcularMedia(temperaturas)
+
+    document.write(`### RELATÓRIO DE MÉDIA DE TEMPERATURAS ### <hr>`)
+
+    exibirElementosDeVetor(temperaturas, 'Temperatura')
+
+    document.write(`<hr>Média total das temperaturas: ${media}`)
+
+
+</script>

@@ -1,0 +1,18 @@
+<meta charset="utf-8">
+<script src="../funcoes.js"></script>
+<script>
+    let numeros = [], pares = []
+    alert('Ler 8 números e exibir números pares!')
+    numeros = preencherVetor(8)
+    validarNumeros(numeros)
+    transformarEmInteiros(numeros)
+    pares = preencherElemetosPares(numeros)
+
+    document.write(`### RELATÓRIO DE NÚMEROS PARES ### <hr>`)
+
+    exibirElementosDeVetor(pares, 'Número')
+
+    document.write(` <hr>Vetor de pares completo por ordem de inserção: ${exibirVetor(pares)}`)
+
+
+</script>

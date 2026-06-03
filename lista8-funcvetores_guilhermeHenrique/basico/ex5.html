@@ -1,0 +1,18 @@
+<meta charset="utf-8">
+<script src="../funcoes.js"></script>
+<script>
+    let numeros = [], numerosNegativos = []
+    alert('Ler 7 valores e contar quantos são negativos!')
+    numeros = preencherVetor(7)
+    validarNumeros(numeros)
+    contarNumerosMenorQue(numeros, 0, numerosNegativos)
+
+
+    document.write(`### RELATÓRIO DE NÚMEROS MENOR QUE 0 ### <hr>`)
+
+    exibirElementosDeVetor(numerosNegativos, 'Número')
+
+    document.write(` <hr>Vetor completo de números negativos: ${exibirVetor(numerosNegativos)}`)
+
+
+</script>

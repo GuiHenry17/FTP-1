@@ -1,0 +1,17 @@
+<meta charset="utf-8">
+<script src="../funcoes.js"></script>
+<script>
+    let numeros = [], maior
+    alert('Ler 6 valores e encontrar o maior!')
+    numeros = preencherVetor(6)
+    validarNumeros(numeros)
+    maior = encontrarMaior(numeros)
+
+    document.write(`### RELATÓRIO DE MAIOR NÚMERO ### <hr>`)
+
+    exibirElementosDeVetor(numeros, 'Número')
+
+    document.write(`<hr>Maior número: ${maior}`)
+
+
+</script>
