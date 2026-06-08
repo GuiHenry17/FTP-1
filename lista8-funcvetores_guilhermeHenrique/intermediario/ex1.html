@@ -1,0 +1,23 @@
+<meta charset="utf-8">
+<script src="../funcoes.js"></script>
+<script>
+    let numeros = [], maiorNumero, menorNumero, soma = 0, media
+    alert('Leia 10 valores e calcule soma, média, maior e menor.')
+    numeros = preencherVetor(10)
+    validarNumeros(numeros)
+    maiorNumero = encontrarMaior(numeros)
+    menorNumero = encontrarMenor(numeros)
+    soma = calcularSoma(numeros)
+    media = calcularMedia(numeros)
+
+
+    document.write(`### RELATÓRIO DE NÚMEROS ### <hr>`)
+
+    exibirElementosDeVetor(numeros, 'Número')
+    document.write(`<hr>Maior número: ${maiorNumero}`)
+    document.write(`<hr>Menor número: ${menorNumero}`)
+    document.write(`<hr>Soma: ${soma}`)
+    document.write(`<hr>Média: ${media}`)
+
+
+</script>

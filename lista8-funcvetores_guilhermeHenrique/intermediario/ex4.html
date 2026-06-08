@@ -1,0 +1,24 @@
+<meta charset="utf-8">
+<script src="../funcoes.js"></script>
+<script>
+    let numeros = [], media, acimaDaMedia = [], quantidadeAcimaDaMedia
+    alert(' Leia 10 notas e conte quantas estão acima da média calculada.')
+    numeros = preencherVetor(10)
+    validarNumeros(numeros)
+    media = calcularMedia(numeros)
+    quantidadeAcimaDaMedia = contarNotasAcimaDaMedia(numeros, acimaDaMedia)
+
+    document.write(`### RELATÓRIO DE NOTAS ACIMA DA MÉDIA ### <hr>`)
+
+    exibirElementosDeVetor(numeros, 'Nota')
+    document.write(`<hr>Média: ${media}`)
+    document.write(`<hr>Quantidade de notas acima da média: ${quantidadeAcimaDaMedia}`)
+    document.write(`<hr>Vetor completo de notas acima da média: [ ${acimaDaMedia} ]`)
+
+
+
+
+
+
+
+</script>

@@ -1,0 +1,23 @@
+<meta charset="utf-8">
+<script src="../funcoes.js"></script>
+<script>
+    let numeros = [], numeroProcurado, encontrado
+    alert('Leia 6 valores e verifique se um número digitado pelo usuário está no vetor. ')
+    numeros = preencherVetor(6)
+    validarNumeros(numeros)
+    numeroProcurado = parseFloat(prompt('Digite um número para verificar se ele está no vetor:'))
+
+
+
+    document.write(`### RELATÓRIO DE NÚMERO PROCURADO ### <hr>`)
+
+    exibirElementosDeVetor(numeros, 'Número')
+
+    verificarExistenciaDeValor(numeros, numeroProcurado)
+
+
+
+
+
+
+</script>

@@ -1,0 +1,18 @@
+<meta charset="utf-8">
+<script src="../funcoes.js"></script>
+<script>
+    let precos = [], quantidadeDeLanchesCaros, lanchesCaros = []
+    alert('Leia o preço de 8 lanches e conte quantos custam R$ 25 ou mais.')
+    precos = preencherVetor(8)
+    validarNumeros(precos)
+    quantidadeDeLanchesCaros = contarNumerosMaiorOuIgualA(precos, 25, lanchesCaros)
+
+    document.write(`### RELATÓRIO DE LANCHES CAROS (R$ 25 ou mais) ### <hr>`)
+    exibirElementosDeVetor(precos, 'Preço do lanche')
+    document.write(`<hr>Quantidade de lanches que custam R$ 25 ou mais: ${quantidadeDeLanchesCaros}`)
+    document.write(`<hr>Vetor completo de lanches que custam R$ 25 ou mais: [ ${lanchesCaros} ]`)
+
+    
+
+
+</script>

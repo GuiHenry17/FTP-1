@@ -1,0 +1,21 @@
+<meta charset="utf-8">
+<script src="../funcoes.js"></script>
+<script>
+    let numeros = [], numerosEntre10e50 = []
+    alert('Leia 10 valores e exiba todos que estão entre 10 e 50 (inclusive).')
+    numeros = preencherVetor(10)
+    validarNumeros(numeros)
+    contarNumerosEntre(numeros, 10, 50, numerosEntre10e50)
+
+    document.write(`### RELATÓRIO DE NÚMEROS ENTRE 10 E 50 ### <hr>`)
+    exibirElementosDeVetor(numeros, 'Número')
+    document.write(`<hr>Quantidade de números entre 10 e 50: ${numerosEntre10e50.length}`)
+    document.write(`<hr>Vetor completo de números entre 10 e 50: [ ${numerosEntre10e50} ]`)
+    
+
+  
+
+    
+
+
+</script>

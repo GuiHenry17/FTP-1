@@ -1,0 +1,21 @@
+<meta charset="utf-8">
+<script src="../funcoes.js"></script>
+<script>
+    let numeros = [], menor, contador = 0
+    alert('Leia 6 números e informe quantos são iguais ao menor valor. ')
+    numeros = preencherVetor(6)
+    validarNumeros(numeros)
+    menor = encontrarMenor(numeros)
+    contador = contarNumerosIgualA(numeros, menor)
+    
+    document.write(`### RELATÓRIO DE NÚMEROS IGUAIS AO MENOR (${menor}) ### <hr>`)
+    exibirElementosDeVetor(numeros, 'Número')
+    document.write(`<hr>Menor número: ${menor}`)
+    document.write(`<hr>Quantidade de números iguais ao menor valor: ${contador}`)
+
+  
+
+    
+
+
+</script>

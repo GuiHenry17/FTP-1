@@ -1,0 +1,23 @@
+ <meta charset="utf-8">
+<script src="../funcoes.js"></script>
+<script>
+    let numeros = [], indiceDoMenorValor
+    alert('Leia 7 valores e informe o índice e o valor do menor elemento.')
+    numeros = preencherVetor(7)
+    validarNumeros(numeros)
+    indiceDoMenorValor = encontrarIndiceDoMenorValor(numeros)
+
+    document.write(`### RELATÓRIO DE ÍNDICE DO MENOR VALOR ### <hr>`)
+    exibirElementosDeVetor(numeros, 'Número')
+    document.write(`<hr>Índice do menor valor: ${indiceDoMenorValor}`)
+    document.write(`<hr>Menor valor: ${numeros[indiceDoMenorValor]}`)
+    
+    
+    
+
+  
+
+    
+
+
+</script>

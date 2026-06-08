@@ -1,0 +1,17 @@
+<meta charset="utf-8">
+<script src="../funcoes.js"></script>
+<script>
+    let numeros = [], somaPares
+    alert('Leia 8 valores e calcule a soma dos elementos nos índices pares (0, 2, 4, 6).')
+    numeros = preencherVetor(8)
+    validarNumeros(numeros)
+    somaPares = calcularSomaDosPares(numeros)
+
+    document.write(`### RELATÓRIO DE SOMA DE PARES ### <hr>`)
+    exibirElementosDeVetor(numeros, 'Número')
+    document.write(`<hr>Soma dos elementos nos índices pares: ${somaPares}`)
+
+    
+
+
+</script>

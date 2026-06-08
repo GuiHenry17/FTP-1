@@ -1,0 +1,18 @@
+<meta charset="utf-8">
+<script src="../funcoes.js"></script>
+<script>
+    let numeros = [], maiores = [], maioresN
+    alert('Leia 8 números e conte quantos são maiores que 50.')
+    numeros = preencherVetor(8)
+    validarNumeros(numeros)
+    maioresN = contarNumerosMaiorQue(numeros, 50, maiores)
+
+    document.write(`### RELATÓRIO DE NÚMEROS MAIORES QUE 50 ### <hr>`)
+
+    exibirElementosDeVetor(numeros, 'Número')
+
+    document.write(`<hr>Quantidade de números maiores que 50: ${maioresN}`)
+    document.write(`<hr>Vetor completo de números maiores que 50: [ ${maiores} ]`)
+    
+
+</script>

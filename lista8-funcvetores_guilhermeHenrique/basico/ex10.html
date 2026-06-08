@@ -1,0 +1,14 @@
+<meta charset="utf-8">
+<script src="../funcoes.js"></script>
+<script>
+    let numeros = [], maiores = [], maioresN
+    alert('Leia 5 notas e informe se cada uma é “Aprovado” (≥ 6) ou “Reprovado”.')
+    numeros = preencherVetor(5)
+    validarNumeros(numeros)
+
+    document.write(`### RELATÓRIO DE APROVAÇÃO (NOTA >= 6) ### <hr>`)
+
+    verficarAprovacao(numeros, 6)
+    
+
+</script>

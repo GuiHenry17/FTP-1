@@ -1,0 +1,18 @@
+<meta charset="utf-8">
+<script src="../funcoes.js"></script>
+<script>
+    let numeros = [], indiceDoMaiorValor
+    alert('Leia 8 números e informe o índice do maior valor.')
+    numeros = preencherVetor(8)
+    validarNumeros(numeros)
+    indiceDoMaiorValor = encontrarIndiceDoMaiorValor(numeros)
+
+    document.write(`### RELATÓRIO DE ÍNDICE DO MAIOR VALOR ### <hr>`) 
+
+    exibirElementosDeVetor(numeros, 'Número')
+    document.write(`<hr>Índice do maior valor: ${indiceDoMaiorValor}`)
+    document.write(`<hr>Maior valor: ${numeros[indiceDoMaiorValor]}`)
+
+
+
+</script>

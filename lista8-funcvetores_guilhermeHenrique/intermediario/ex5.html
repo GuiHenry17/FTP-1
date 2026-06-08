@@ -1,0 +1,22 @@
+<meta charset="utf-8">
+<script src="../funcoes.js"></script>
+<script>
+    let numeros = [], multiplosDe3 = [], quantidadeMultiplosDe3
+    alert('Leia 5 números inteiros e exiba apenas os que são múltiplos de 3. ')
+    numeros = preencherVetor(5)
+    validarNumeros(numeros)
+    quantidadeMultiplosDe3 = contarMultiplosDe3(numeros, multiplosDe3)
+
+    document.write(`### RELATÓRIO DE NÚMEROS MÚLTIPLOS DE 3 ### <hr>`)
+    exibirElementosDeVetor(numeros, 'Número')
+    document.write(`<hr>Quantidade de números múltiplos de 3: ${quantidadeMultiplosDe3}`)
+    document.write(`<hr>Vetor completo de números múltiplos de 3: [ ${multiplosDe3} ]`)
+
+
+
+
+
+
+
+
+</script>

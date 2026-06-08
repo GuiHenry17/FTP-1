@@ -1,0 +1,17 @@
+<meta charset="utf-8">
+<script src="../funcoes.js"></script>
+<script>
+    let numeros = [], diferenca
+    alert('Leia 8 valores e calcule a diferença entre o maior e o menor.')
+    numeros = preencherVetor(8)
+    validarNumeros(numeros)
+    diferenca = calcularDiferenca(numeros)
+
+    document.write(`### RELATÓRIO DE DIFERENÇA ENTRE MAIOR E MENOR ### <hr>`)
+    exibirElementosDeVetor(numeros, 'Número')
+    document.write(`<hr>Diferença: ${diferenca}`)
+
+    
+
+
+</script>
