@@ -1,0 +1,21 @@
+<meta charset="utf-8">
+<script src="../funcoes.js"></script>
+<script>
+    let paes = [], totalDePaes, mediaDiariaConsumo, diaMaiorConsumo
+    alert('Leia o consumo de pães (unidades) em 6 dias. Calcule o total, a média diária e o dia de maior consumo.')
+    paes = preencherVetor(6)
+    validarNumeros(paes)
+    totalDePaes = calcularSoma(paes)
+    mediaDiariaConsumo = calcularMedia(paes)
+    diaMaiorConsumo = encontrarIndiceDoMaiorValor(paes)
+
+    document.write(`### RELATÓRIO DE CONSUMO DIÁRIO DE PÃES ### <hr>`)
+    exibirElementosDeVetor(paes, 'dia')
+    document.write(`<hr>Quantidade total de pães consumidos: ${totalDePaes}`)
+    document.write(`<hr>Média diária de consumo: ${mediaDiariaConsumo}`)
+    document.write(`<hr>Dia de maior consumo: ${diaMaiorConsumo + 1}`)
+
+    
+
+
+</script>

@@ -1,0 +1,20 @@
+<meta charset="utf-8">
+<script src="../funcoes.js"></script>
+<script>
+    let movimentacoes = [], mediaMensal, maiorMovimentacao
+    alert('Leia o faturamento de 12 meses e calcule a média mensal e o mês de maior movimento.')
+    movimentacoes = preencherVetor(12)
+    validarNumeros(movimentacoes)
+    mediaMensal = calcularMedia(movimentacoes)
+    maiorMovimentacao = encontrarMaior(movimentacoes)
+    transformarValoresEmReal(movimentacoes)
+
+    document.write(`### RELATÓRIO DE MOVIMENTAÇÕES/FATURAMENTO ANUAL ### <hr>`)
+    exibirElementosDeVetor(movimentacoes, 'movimentação')
+    document.write(`<hr>Média mensal de movimentações: R$ ${mediaMensal.toFixed(2)}`)
+    document.write(`<hr>Maior movimentação:  R$ ${maiorMovimentacao.toFixed(2)} `)
+
+    
+
+
+</script>

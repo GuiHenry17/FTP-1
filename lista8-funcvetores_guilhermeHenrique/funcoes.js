@@ -240,7 +240,7 @@ function contarNumerosIgualA(vetor = [], criterio, vetorOpcional = []) {
 }
 
 function contarNumerosEntre(vetor = [], limiteInferior, limiteSuperior, vetorOpcional = []) {
-    let contador = 0, i, iVOpcional = 0; 
+    let contador = 0, i, iVOpcional = 0;
     for (i = 0; i < vetor.length; i++) {
         if (vetor[i] >= limiteInferior && vetor[i] <= limiteSuperior) {
             contador++
@@ -288,4 +288,50 @@ function contarNumerosMaiorOuIgualA(vetor = [], criterio, vetorOpcional = []) {
         }
     }
     return contador
+}
+
+function transformarValoresEmReal(vetor = []) {
+    let i;
+    for (i = 0; i < vetor.length; i++) {
+        Number(vetor[i])
+        vetor[i] = `R$ ${vetor[i].toFixed(2)}`
+    }
+}
+
+function validarNotas(vetor = []) {
+    let i;
+    for (i = 0; i < vetor.length; i++) {
+        while (vetor[i] < 0 || vetor[i] > 10) {
+            alert(`A ${i + 1}º nota deve ser um valor numérico entre 0 e 10!`)
+            vetor[i] = Number(prompt(`Insira a ${i + 1}º nota:`))
+        }
+    }
+}
+
+function verificarTempoCritico(vetor = [], limite = 15, pedidosTCriticos = []) {
+    let i, quantidade = 0
+
+    for (i = 0; i < vetor.length; i++) {
+        if (vetor[i] > limite) {
+            pedidosTCriticos[quantidade] = i + 1
+            quantidade++
+        }
+    }
+
+    return quantidade
+}
+
+//DESAFIO
+
+function verificarDiasFechados(vetor = [], diasFechados = []) {
+    let i, quantidade = 0
+
+    for (i = 0; i < vetor.length; i++) {
+        if (vetor[i] == 0) {
+            diasFechados[quantidade] = i + 1
+            quantidade++
+        }
+    }
+
+    return quantidade
 }

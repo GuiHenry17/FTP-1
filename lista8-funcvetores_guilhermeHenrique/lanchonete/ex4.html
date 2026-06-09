@@ -1,0 +1,17 @@
+<meta charset="utf-8">
+<script src="../funcoes.js"></script>
+<script>
+    let notas = [], notasAcimaDoCorte = [], quantidadeNotasAcimaDoCorte
+    alert('Leia 10 notas de avaliação (0 a 10) e conte quantas estão acima da nota de corte 8.')
+    notas = preencherVetor(10)
+    validarNotas(notas)
+    quantidadeNotasAcimaDoCorte = contarNumerosMaiorQue(notas, 8, notasAcimaDoCorte)
+
+    document.write(`### RELATÓRIO DE SATISFAÇÃO ### <hr>`)
+
+    exibirElementosDeVetor(notas, 'Nota')
+    document.write(`<hr>Nota de corte: 8`)
+    document.write(`<hr>Quantidade de notas acima da nota de corte: ${quantidadeNotasAcimaDoCorte}`)
+    document.write(`<hr>Vetor completo de notas acima da nota de corte: [ ${notasAcimaDoCorte} ]`)
+
+</script>

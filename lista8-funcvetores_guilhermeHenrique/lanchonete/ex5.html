@@ -1,0 +1,19 @@
+<meta charset="utf-8">
+<script src="../funcoes.js"></script>
+
+<script>
+    let tempos = [], quantidadeCriticos, pedidosTCriticos = []
+    alert('Leia o tempo de atendimento (min) de 7 pedidos. Verifique se algum ultrapassou 15 min (tempo crítico) e informe em quais pedidos ocorreu.')
+    tempos = preencherVetor(7)
+    quantidadeCriticos = verificarTempoCritico(tempos, 15, pedidosTCriticos)
+
+    document.write('### RELATÓRIO DE ATENDIMENTO ### <hr>')
+
+    exibirElementosDeVetor(tempos, 'atendimento (Minutos)')
+
+    document.write('<hr>Tempo crítico: 15 minutos')
+    document.write(`<hr>Quantidade de pedidos com tempo crítico: ${quantidadeCriticos}`)
+    document.write(`<hr>O tempo crítico ocorreu nos pedidos: [ ${pedidosTCriticos} ]`)
+   
+
+</script>

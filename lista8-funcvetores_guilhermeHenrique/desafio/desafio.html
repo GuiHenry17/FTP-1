@@ -1,0 +1,38 @@
+<meta charset="utf-8">
+<script src="../funcoes.js"></script>
+
+<script>
+    let faturamentos = [], total, media, maior, menor
+    let indiceMaior, indiceMenor, quantidadeAcimaDaMedia
+    let diasFechados = [], quantidadeDiasFechados
+
+    alert('A Lanchonete JS registra o faturamento diário durante 15 dias.')
+
+    faturamentos = preencherVetor(15)
+    validarNumeros(faturamentos)
+
+    total = calcularSoma(faturamentos)
+    media = calcularMedia(faturamentos)
+
+    maior = encontrarMaior(faturamentos)
+    menor = encontrarMenor(faturamentos)
+
+    indiceMaior = encontrarIndiceDoMaiorValor(faturamentos)
+    indiceMenor = encontrarIndiceDoMenorValor(faturamentos)
+
+    quantidadeAcimaDaMedia = contarNumerosMaiorQue(faturamentos, media)
+    quantidadeDiasFechados = verificarDiasFechados(faturamentos, diasFechados)
+
+    document.write('### RELATÓRIO DA LANCHONETE JS ### <hr>')
+
+    exibirElementosDeVetor(faturamentos, 'Faturamento')
+
+    document.write(`<hr>Faturamento total do período: R$ ${total.toFixed(2)}`)
+    document.write(`<hr>Média diária de faturamento: R$ ${media.toFixed(2)}`)
+    document.write(`<hr>Maior faturamento: R$ ${maior.toFixed(2)} no ${indiceMaior + 1}º dia`)
+    document.write(`<hr>Menor faturamento: R$ ${menor.toFixed(2)} no ${indiceMenor + 1}º dia`)
+    document.write(`<hr>Quantidade de dias acima da média: ${quantidadeAcimaDaMedia}`)
+    document.write(`<hr>A lanchonete ficou fechada nos dias: [ ${diasFechados} ]`)
+    
+
+</script>
