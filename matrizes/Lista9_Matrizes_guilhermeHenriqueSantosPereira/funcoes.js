@@ -3,7 +3,7 @@ function preencherMatriz(l, c, givenNumber = false, number = null) {
     for (i = 0; i < l; i++) {
         mat[i] = []
         for (j = 0; j < c; j++) {
-            if (!givenNumber){
+            if (!givenNumber) {
                 mat[i][j] = Number(prompt(`Insira o valor da ${j + 1}º coluna da ${i + 1}º linha ( Matriz[${i},${j}] ):`))
             } else {
                 mat[i][j] = number
@@ -27,8 +27,6 @@ function exibirMatriz(mat = []) {
         }
         document.write(" ]<br>")
     }
-
-    document.write("<hr>")
 }
 
 function calcularSomaMatriz(mat = [], exibir = false) {
@@ -44,14 +42,20 @@ function calcularSomaMatriz(mat = [], exibir = false) {
     return soma
 }
 
-function calcularMediaMatriz(mat = []) {
+function calcularMediaMatriz(mat = [], exibir = false, label) {
     let soma = calcularSomaMatriz(mat)
     let media = soma / (mat.length * mat[0].length)
-    document.write(`<hr> A média dos valores da Matriz é: ${media}`)
+    if (exibir) {
+        if (!label) {
+            document.write(`<hr> A média dos valores da Matriz é: ${media}`)
+        } else {
+            document.write(`<hr> A média das(os) ${label} da Matriz é: ${media}`)
+        }
+    }
     return media
 }
 
-function encontrarMaiorValorMatriz(mat = []) {
+function encontrarMaiorValorMatriz(mat = [], exibir = false, label) {
     let i, j, l = mat.length, c = mat[0].length, maior;
     for (i = 0; i < l; i++) {
         for (j = 0; j < c; j++) {
@@ -63,11 +67,17 @@ function encontrarMaiorValorMatriz(mat = []) {
             }
         }
     }
-    document.write(`<hr> O maior valor da Matriz é: ${maior}`)
+    if (exibir) {
+        if (!label) {
+            document.write(`<hr> O maior valor da Matriz é: ${maior}`)
+        } else {
+            document.write(`<hr> A(o) maior ${label} da Matriz é: ${maior}`)
+        }
+    }
     return maior
 }
 
-function encontrarMenorValorMatriz(mat = []) {
+function encontrarMenorValorMatriz(mat = [], exibir = false, label) {
     let i, j, l = mat.length, c = mat[0].length, menor;
     for (i = 0; i < l; i++) {
         for (j = 0; j < c; j++) {
@@ -79,7 +89,13 @@ function encontrarMenorValorMatriz(mat = []) {
             }
         }
     }
-    document.write(`<hr> O menor valor da Matriz é: ${menor}`)
+    if (exibir) {
+        if (!label) {
+            document.write(`<hr> O menor valor da Matriz é: ${menor}`)
+        } else {
+            document.write(`<hr> A(o) menor ${label} da Matriz é: ${menor}`)
+        }
+    }
     return menor
 }
 
@@ -164,7 +180,7 @@ function calcularSomaVetor(vetor = [], exibir = false) {
 }
 
 function valoresEmPosicaoPar(mat = []) {
-    let i, j, l = mat.length, c = mat[0].length, contador = 0
+    let i, j, l = mat.length, c = mat[0].length
     document.write(`Números onde a soma de linha + coluna é par: <hr>`)
     for (i = 0; i < l; i++) {
         for (j = 0; j < c; j++) {
@@ -186,4 +202,130 @@ function triplicarValoresMatriz(mat = []) {
     }
 
     return matrizTriplicada
+}
+
+function gerarMatrizDiferenca(mat = [], mat2 = []) {
+    let i, j, l = mat.length, c = mat[0].length, matrizDiferenca = []
+    for (let i = 0; i < l; i++) {
+        matrizDiferenca[i] = []
+        for (let j = 0; j < c; j++) {
+            if (mat[i][j] > mat2[i][j]) {
+                matrizDiferenca[i][j] = mat[i][j] - mat2[i][j]
+            } else {
+                matrizDiferenca[i][j] = mat2[i][j] - mat[i][j]
+            }
+        }
+    }
+
+    return matrizDiferenca
+}
+
+function preencherMatrizNotas(l, c) {
+    let mat = [], i, j
+    for (i = 0; i < l; i++) {
+        mat[i] = []
+        for (j = 0; j < c; j++) {
+            mat[i][j] = Number(prompt(`Insira a nota da ${j + 1}º disciplina do ${i + 1}º aluno ( Matriz[${i},${j}] ):`))
+        }
+    }
+    return mat;
+}
+
+function calcularMediaColuna(mat = [], label) {
+    let i, j, l = mat.length, c = mat[0].length, somaColuna = 0
+    document.write(`<hr>Média das colunas da matriz: <br><br>`)
+    for (i = 0; i < c; i++) {
+        for (j = 0; j < l; j++) {
+            somaColuna += mat[j][i]
+        }
+        if (!label) {
+            document.write(`A média da ${i + 1}º coluna é de: ${somaColuna / l} <br>`)
+        } else {
+            document.write(`A média da(o) ${i + 1}º ${label} é de: ${somaColuna / l} <br>`)
+        }
+        somaColuna = 0
+    }
+}
+
+function calcularMaiorValorLinha(mat = [], label, label2) {
+    let i, j, l = mat.length, c = mat[0].length, maior
+    document.write(`<hr> Maior valor por linha da Matriz: <br><br>`)
+    for (i = 0; i < l; i++) {
+        for (j = 0; j < c; j++) {
+            if (j == 0){
+                maior = mat[i][j]
+            }
+            if (mat[i][j] > maior){
+                maior = mat[i][j]
+            }
+        }
+        if (!label) {
+            document.write(`O maior valor da ${i + 1}º linha é de: ${maior} <br>`)
+        } else {
+            if (!label2) {
+            document.write(`O maior valor do(a) ${i + 1}º ${label} é de: ${maior} <br>`)
+            } else {
+                document.write(`A(o) maior ${label2} do(a) ${i + 1}º ${label} é de: ${maior} <br>`)
+            }
+        }
+        maior = null
+    }
+
+}
+
+function calcularMenorValorLinha(mat = [], label, label2) {
+    let i, j, l = mat.length, c = mat[0].length, menor
+    document.write(`<hr> Menor valor por linha da Matriz: <br><br>`)
+    for (i = 0; i < l; i++) {
+        for (j = 0; j < c; j++) {
+            if (j == 0){
+                menor = mat[i][j]
+            }
+            if (mat[i][j] < menor){
+                menor = mat[i][j]
+            }
+        }
+        if (!label) {
+            document.write(`O menor valor da ${i + 1}º linha é de: ${menor} <br>`)
+        } else {
+            if (!label2) {
+            document.write(`O menor valor do(a) ${i + 1}º ${label} é de: ${menor} <br>`)
+            } else {
+                document.write(`A(o) menor ${label2} do(a) ${i + 1}º ${label} é de: ${menor} <br>`)
+            }
+        }
+        menor = null
+    }
+}
+
+function calcularTotalLinha(mat = [], label, label2 = "") {
+    let i, j, l = mat.length, c = mat[0].length, somaLinha = 0
+    document.write(`<hr>Média das colunas da matriz: <br><br>`)
+    for (i = 0; i < l; i++) {
+        for (j = 0; j < c; j++) {
+            somaLinha += mat[i][j]
+        }
+        if (!label) {
+            document.write(`O total da ${i + 1}º linha é de: ${somaLinha} ${label2}<br>`)
+        } else {
+            document.write(`O total do(a) ${i + 1}º ${label} é de: ${somaLinha} ${label2}<br>`)
+        }
+        somaLinha = 0
+    }
+}
+
+function calcularTotalColuna(mat = [], label, label2 = "") {
+    let i, j, l = mat.length, c = mat[0].length, somaColuna = 0
+    document.write(`<hr>Média das colunas da matriz: <br><br>`)
+    for (i = 0; i < c; i++) {
+        for (j = 0; j < l; j++) {
+            somaColuna += mat[j][i]
+        }
+        if (!label) {
+            document.write(`O total da ${i + 1}º coluna é de: ${somaColuna} ${label2}<br>`)
+        } else {
+            document.write(`O total do(a) ${i + 1}º ${label} é de: ${somaColuna} ${label2}<br>`)
+        }
+        somaColuna = 0
+    }
 }

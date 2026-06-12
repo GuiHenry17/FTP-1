@@ -1,0 +1,16 @@
+<meta charset="utf-8">
+<script src="funcoes.js"></script>
+<script>
+
+    let matriz = [], matriz2 = [], matrizDiferenca = []
+    alert(`INTERMEDIÁRIO: Geração de matriz diferença (entre matrizes)`)
+    alert(`Matriz 1:`)
+    matriz = preencherMatriz(3, 3)
+    alert(`Matriz 2:`)
+    matriz2 = preencherMatriz(3, 3)
+    exibirMatriz(matriz)
+    exibirMatriz(matriz2)
+    matrizDiferenca = gerarMatrizDiferenca(matriz, matriz2)
+    exibirMatriz(matrizDiferenca)
+
+</script>

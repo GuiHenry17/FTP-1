@@ -1,0 +1,19 @@
+<meta charset="utf-8">
+<script src="funcoes.js"></script>
+<script>
+
+    let matriz = [], exibirRetorno
+    alert(`AVANÇADO: Análise de desempenho da turma`)
+    alert(`Matriz alunos X notas em disciplinas:`)
+    matriz = preencherMatrizNotas(5, 3)
+    exibirMatriz(matriz)
+    calcularMediaMatriz(matriz, exibirRetorno = true, "notas")
+    calcularMediaColuna(matriz, "discplina")
+    encontrarMaiorValorMatriz(matriz, exibirRetorno = true, "nota")
+    encontrarMenorValorMatriz(matriz, exibirRetorno = true, "nota")
+    calcularMaiorValorLinha(matriz, "aluno", "nota")
+    calcularMenorValorLinha(matriz, "aluno", "nota")
+
+    
+
+</script>

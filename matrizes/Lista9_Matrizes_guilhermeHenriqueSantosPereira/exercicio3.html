@@ -1,9 +1,11 @@
 <meta charset="utf-8">
-<script src="../funcoes.js"></script>
+<script src="funcoes.js"></script>
 <script>
 
     let matriz = [], numeroProcurado, exibirRetorno
+    alert(`BÁSICO: Soma dos elementos de matriz`)
     numeroProcurado = Number(prompt(`Insira um número para buscar na matriz:`))
+    alert(`Matriz 1:`)
     matriz = preencherMatriz(3, 3)
     exibirMatriz(matriz)
     buscarElementoNaMatriz(matriz, numeroProcurado, exibirRetorno = true)
